@@ -1,41 +1,129 @@
 .titlename {
   color: #FFFFFF;
   margin-left: 570px;
-  letter-spacing: 15px;
+  letter-spacing: 10px;
   padding: 15px 0px 0px;
-  font-weight:400;
+  font-weight: 400;
   font-size: 30px;
   font-family: 'Courier New', Courier, monospace
 }
 
 .navbarfull {
   background-color: black;
-  height:130px;
+  height: 130px;
 
 }
 
 .nav-link {
   color: #9e9e9e;
-  margin-left: 350px;
-  margin-right: -300px;
-  font-weight:500;
+  margin-left: 340px;
+  margin-right: -290px;
+  font-weight: 500;
 }
 
 .nav-link:hover {
-  text-decoration: underline;
-  color:white;
-  font-weight:bold;
+  color: white;
+  font-weight: bold;
 }
 
 .leftsidenav {
   margin-left: 200px;
 }
 
-.setting{
-  margin-top:-10px;
-  margin-left:-30px;
+
+.btn {
+  margin-left: 10px;
+  width: 100px;
+  margin-top: -3px;
 }
-.cart{
-  margin-top:-95px;
-  margin-left:30px;
+
+.areamask {
+  width: 140px;
+
+}
+
+.areamask:hover {
+  color: white;
+  font-weight: bold;
+}
+
+.badge:hover {
+  background-color: #978f8f;
+  border-radius: 25px;
+}
+
+
+.notes::after {
+  content: "";
+  display: inline-block;
+  background: #8596ff;
+  width: 6px;
+  height: 6px;
+  border-radius: 4px;
+  position: relative;
+  margin-left: 60px;
+  top: -25px;
+}
+
+
+/* .ul {
+  display: none;
+}
+
+.companymenuli:hover .ul {
+  display: block;
+  margin-top: 100px;
+} */
+
+.companymenuli {
+  margin-top: 5px;
+  margin-left: 260px;
+}
+
+
+.setting {
+  padding-left: 200px;
+
+}
+
+
+
+.setting li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  background-color: #fff;
+  opacity: 0.5;
+}
+
+.setting li:hover ul {
+  display: block;
+}
+
+.setting li ul li {
+  display: block;
+}
+
+.setting li ul li a {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: #000;
+  text-decoration: none;
+  opacity: 1;
+} 
+
+ .setting li ul li a img {
+  width: 20px;
+  margin-right: 10px;
+  opacity: 0.5;
+}
+
+.setting li ul li a:hover {
+  background-color: #f2f2f2;
+  opacity: 1;
+}
+
+.setting li ul li a:hover img {
+  opacity: 1;
 }

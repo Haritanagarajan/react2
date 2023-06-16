@@ -17,16 +17,31 @@ export default function Navbar() {
                             <a className='nav-link' aria-current="page" href="#">SCHOOL</a>
                             <a className='nav-link' href="#">COLLEGE</a>
                             <a className='nav-link' href="#">ENTERPRISE</a>
-                            <a className='nav-link' href="#">NOTES</a>
-                            <a className='nav-link' href="#">ARIEN MASK</a>
-                            <div className='leftsidenav'>
-                            <a className='nav-link'><img className='setting' src={setting} width='20px'/></a>
-                            <a className='nav-link'><img className='cart' src={cart} width='25px'/></a>
+                            <a className='nav-link notes' href="#">NOTES</a>
+                            <a className='nav-link areamask' href="#">ARIEN MASK</a>
+                            <div className='setting'>
+
+
+
+                                <li class="companymenuli"><a class="alisting"><img src={setting} width='20px' /><b class="caret"></b></a>
+                                    <ul class="ul">
+                                        <li>Sign In &nbsp; |</li>
+                                        <li>Register  &nbsp; |</li>
+                                        <li>Order Status &nbsp;  |</li>
+                                        <li>Contact  &nbsp; |</li>
+
+                                    </ul>
+                                </li>
+                            </div>
+
+                            <div>
+                                <button class="btn"><img src={cart} width='25px' /><span class="badge">0</span></button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </nav>
+            </nav >
+
         </div>
     );
 }
