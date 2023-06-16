@@ -18,20 +18,21 @@ export default function Navbar() {
                             <a className='nav-link' href="#">COLLEGE</a>
                             <a className='nav-link' href="#">ENTERPRISE</a>
                             <a className='nav-link notes' href="#">NOTES</a>
-                            <a className='nav-link areamask' href="#">ARIEN MASK</a>
+                            <a className='nav-link' id='areamask' href="#">ARIEN MASK</a>
+                            
                             <div className='setting'>
-
-
-
                                 <li class="companymenuli"><a class="alisting"><img src={setting} width='20px' /><b class="caret"></b></a>
                                     <ul class="ul">
                                         <li>Sign In &nbsp; |</li>
                                         <li>Register  &nbsp; |</li>
-                                        <li>Order Status &nbsp;  |</li>
+                                        <li>Order Status &nbsp; |</li>
                                         <li>Contact  &nbsp; |</li>
 
                                     </ul>
                                 </li>
+
+
+
                             </div>
 
                             <div>
