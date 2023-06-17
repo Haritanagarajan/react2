@@ -1,0 +1,268 @@
+/*1*/
+
+.threemens {
+    margin-left: -1px;
+    position: relative;
+}
+
+.chooseclasscontent1 {
+    position: absolute;
+    margin-left: 50px;
+    font-size: 36px;
+    font-weight: 100;
+    color: #978F8F;
+}
+
+.chooseclasscontent2 {
+    position: absolute;
+    margin-top: 35px;
+    left: 18px;
+    font-size: 36px;
+    font-weight: 500;
+    color: #978F8F;
+
+}
+
+.borderforchooseclass {
+    position: relative;
+    width: 340px;
+    height: 95px;
+    text-align: center;
+    top: -240px;
+    font-size: 36px;
+    bottom: 140px;
+    left: calc(50% - 170px);
+    padding: 10px;
+    border: 1px solid white;
+    line-height: 1;
+}
+
+
+
+.fa-chevron-right {
+    color: white;
+    position: absolute;
+    margin-top: 142px;
+    font-size: 15px;
+    margin-left: 180px;
+    animation: mymove 1s linear infinite;
+}
+
+.fa-chevron-right:hover {
+    color: black;
+}
+
+
+@keyframes mymove {
+    0% {
+        margin-left: 40%;
+    }
+
+    100% {
+        margin-left: 46%;
+        margin-right: 1%;
+    }
+}
+
+
+.acecraftforcolleges {
+    position: absolute;
+    margin-top: 140px;
+    margin-left: -100px;
+    font-size: 17px;
+    letter-spacing: 1px;
+    color: white;
+    font-weight: 500;
+}
+
+.acecraftforcolleges:hover {
+    color: black;
+}
+
+
+
+
+
+
+/*2*/
+
+
+.threemens1 {
+    position: relative;
+    width: 700px;
+    margin-top: -90px;
+
+
+}
+
+
+
+.chooseclasscontent11 {
+    position: absolute;
+    margin-left: 100px;
+    font-size: 36px;
+    font-weight: 100;
+    color: #978F8F;
+}
+
+.chooseclasscontent21 {
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 60px;
+    font-size: 36px;
+    font-weight: 500;
+    color: #978F8F;
+
+}
+
+.borderforchooseclass1 {
+    position: relative;
+    width: 360px;
+    top: -600px;
+    height: 95px;
+    text-align: center;
+    font-size: 36px;
+    bottom: 140px;
+    left: calc(25% - 170px);
+    padding: 10px;
+    border: 1px solid white;
+    line-height: 1;
+}
+
+
+
+.fa-chevron-right {
+    color: white;
+    position: absolute;
+    margin-top: 142px;
+    font-size: 15px;
+    margin-left: 180px;
+    animation: mymove 1s linear infinite;
+}
+
+.fa-chevron-right:hover {
+    color: black;
+}
+
+
+@keyframes mymove {
+    0% {
+        margin-left: 40%;
+    }
+
+    100% {
+        margin-left: 46%;
+        margin-right: 1%;
+    }
+}
+
+
+.acecraftforcolleges1 {
+    position: absolute;
+    margin-top: 140px;
+    margin-left: -100px;
+    font-size: 17px;
+    letter-spacing: 1px;
+    color: white;
+    font-weight: 500;
+}
+
+.acecraftforcolleges1:hover {
+    color: black;
+}
+
+
+
+
+/*3*/
+
+
+.threemens2 {
+    position: relative;
+    width: 700px;
+    margin-top: -1269px;
+    left: 710px;
+
+}
+
+.chooseclasscontent12 {
+    position: absolute;
+    margin-left: 90px;
+    font-size: 36px;
+    font-weight: 100;
+    color: #978F8F;
+
+}
+
+.chooseclasscontent22 {
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 80px;
+    font-size: 36px;
+    font-weight: 500;
+    color: #978F8F;
+
+}
+
+.borderforchooseclass2 {
+    position: relative;
+    width: 340px;
+    height: 95px;
+    top: -730px;
+    text-align: center;
+    font-size: 36px;
+    bottom: 140px;
+    left: calc(65% - -4px);
+    padding: 10px;
+    border: 1px solid white;
+    line-height: 1;
+
+}
+
+
+
+.fa-chevron-right {
+    color: white;
+    position: absolute;
+    margin-top: 142px;
+    font-size: 15px;
+    margin-left: 180px;
+    animation: mymove 1s linear infinite;
+}
+
+.fa-chevron-right:hover {
+    color: black;
+}
+
+
+@keyframes mymove {
+    0% {
+        margin-left: 40%;
+    }
+
+    100% {
+        margin-left: 46%;
+        margin-right: 1%;
+    }
+}
+
+
+.acecraftforcolleges2 {
+    position: absolute;
+    margin-top: 140px;
+    margin-left: -110px;
+    font-size: 17px;
+    letter-spacing: 1px;
+    color: white;
+    font-weight: 500;
+}
+
+.acecraftforcolleges2:hover {
+    color: black;
+}
+
+
+
+
+
+
