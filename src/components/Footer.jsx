@@ -14,7 +14,7 @@ import Linkedin from './Linkedin.png';
 export default function Footer() {
 
     return (
-        <div className="footerstart">
+        <div className="footerstart" >
 
 
             <section className="footer" >

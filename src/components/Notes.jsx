@@ -1,51 +1,61 @@
-import React from "react";
-
-// import { Link } from "react-router-dom";
-
+import React, { useEffect, useState } from 'react';
 import '../Styles/Notes.css'
 
-import Blogs from '../Data/Notes.json';
-
-import { useState } from 'react';
-
-
-export default function Notes()
-
- {
-
-    const [details, setDetails] = useState(0);
-
-    function handleNextClick() {
-        setDetails(details + 1);
-    }
+const Notes = () => {
+    const [notesindex, setnotesindex] = useState([]);
 
 
-    let Notesdetails = Blogs[details];
+    const fetchData = () => {
+        fetch('http://localhost:4000/Notes')
+            .then((response) => response.json())
+            .then((data) => {
+                setnotesindex(data);
+            });
+    };
 
-   
+    useEffect(() => {
+        fetchData();
+    }, []);
 
     return (
-        
-        <div class="card" style={{ color: 'black' }}>
 
-            <i>{Notesdetails.title}</i>
 
-            <button
 
-                onClick={handleNextClick}
-                className="btn btn-warning"
-                style={{ borderRadius: 70 }}>
 
-            </button>
+
+        <div className='container mb-3'>
+
+            <h1 className='blogs text-center '>Blogs</h1>
+
+            <div className='row' >
+                {notesindex.map((notes) => (
+
+                    <div className="col-md-6" key={notes.id}>
+
+
+
+                        <div className="cards">
+
+                            <div className='card-body  text-center '>
+
+                                {notes.title}
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                ))}
+            </div>
+
         </div>
 
+
+
+
+
+
     );
+};
 
-
-}
-
-
-
-
-
-
+export default Notes;
