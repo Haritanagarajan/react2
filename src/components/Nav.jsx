@@ -9,7 +9,7 @@ export default function Navbar() {
     return (
         <div className='navbarfull col-lg-12 col-md-12 col-sm-12 col-xl-12 sticky-top' >
 
-            <Link className='titlename' to="Acecraft">acecraft</Link>
+            <Link className='titlename' to="/">acecraft</Link>
 
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
