@@ -80,7 +80,7 @@ function Honda() {
 function Steps() {
     const [stepsindex, setstepsindex] = useState([]);
     const fetchData = () => {
-        fetch('http://localhost:3002/steps')
+        fetch('http://localhost:4000/steps')
             .then((response) => response.json())
             .then((data) => {
                 setstepsindex(data);

@@ -6,7 +6,7 @@ const Notes = () => {
 
 
     const fetchData = () => {
-        fetch('http://localhost:3001/Notes')
+        fetch('http://localhost:4000/Notes')
             .then((response) => response.json())
             .then((data) => {
                 setnotesindex(data);
