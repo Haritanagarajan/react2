@@ -1,9 +1,9 @@
 import React from 'react';
-import setting from './setting.png';
-import cart from './cart.png';
+import setting from '../Asserts/Images/setting.png';
+import cart from '../Asserts/Images/cart.png';
 import { Link } from "react-router-dom";
 import '../Styles/Nav.css';
-import Orderstatus from './Orderstatus.png'
+import Orderstatus from '../Asserts/Images/Orderstatus.png'
 
 export default function Navbar() {
     return (

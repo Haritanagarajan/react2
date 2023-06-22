@@ -1,9 +1,9 @@
 import React from "react";
 import "primereact/resources/primereact.min.css";
-import Home1 from './Home1.jpg';
+import Home1 from '../Asserts/Images/Home1.jpg';
 import '../Styles/Acecraft.css';
-import Home2 from './Home2.jpg';
-import Home3 from './Home3.jpg';
+import Home2 from '../Asserts/Images/Home2.jpg';
+import Home3 from '../Asserts/Images/Home3.jpg';
 import { Link } from 'react-router-dom';
 
 

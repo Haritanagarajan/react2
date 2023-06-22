@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 import '../Styles/Footer.css';
 
-import Facebook from './Facebook.png';
+import Facebook from '../Asserts/Images/Facebook.png';
 
-import Instagram from './Instagram.png';
+import Instagram from '../Asserts/Images/Instagram.png';
 
-import Linkedin from './Linkedin.png';
+import Linkedin from '../Asserts/Images/Linkedin.png';
 
 
 export default function Footer() {

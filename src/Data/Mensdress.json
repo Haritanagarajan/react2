@@ -2,19 +2,19 @@
     "mens": [
         {
             "id": 1,
-            "img":"components/Enterprises3img.png",
+            "img": "https://cdn.storehippo.com/s/5997cc7c4d6e8ffa20e50aae/ms.files/Enterprises-2.png",
             "imgcontent1": "F(IT) MATTERS .",
             "imgcontent2": "A size for every one"
         },
         {
             "id": 2,
-            "img":"components/Enterprises3img.png",
+            "img": "https://cdn.storehippo.com/s/5997cc7c4d6e8ffa20e50aae/ms.files/Enterprises-3.png",
             "imgcontent1": "PERSONALISED BRANDING",
             "imgcontent2": "Your design.Our customization."
         },
         {
             "id": 3,
-            "img":"components/Enterprises4img.png",
+            "img": "https://cdn.storehippo.com/s/5997cc7c4d6e8ffa20e50aae/ms.files/Enterprises-4.png",
             "imgcontent1": "TEAM UP FOR TEAM WEAR",
             "imgcontent2": "Bulk orders delivered seamlessly."
         }

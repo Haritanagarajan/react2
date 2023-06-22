@@ -6,7 +6,7 @@ const Notes = () => {
 
 
     const fetchData = () => {
-        fetch('http://localhost:4000/Notes')
+        fetch('http://localhost:3001/Notes')
             .then((response) => response.json())
             .then((data) => {
                 setnotesindex(data);
@@ -28,6 +28,7 @@ const Notes = () => {
             <h1 className='blogs text-center '>Blogs</h1>
 
             <div className='row' >
+
                 {notesindex.map((notes) => (
 
                     <div className="col-md-6" key={notes.id}>

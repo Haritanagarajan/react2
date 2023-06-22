@@ -1,0 +1,40 @@
+{
+    "steps": [
+        {
+            "stepsid": 1,
+            "stepsimg": "http://cdn.storehippo.com/s/5997cc7c4d6e8ffa20e50aae/ms.files/icon-1.png",
+            "stepscontent1": "Single line",
+            "stepscontent2": "brief"
+        },
+        {
+            "stepsid": 2,
+            "stepsimg": "http://cdn.storehippo.com/s/5997cc7c4d6e8ffa20e50aae/ms.files/icon-2.png",
+            "stepscontent1": "Mind",
+            "stepscontent2": "mapping"
+        },
+        {
+            "stepsid": 3,
+            "stepsimg": "http://cdn.storehippo.com/s/5997cc7c4d6e8ffa20e50aae/ms.files/icon-3.png",
+            "stepscontent1": "Design and",
+            "stepscontent2": "details"
+        },
+        {
+            "stepsid": 4,
+            "stepsimg": "http://cdn.storehippo.com/s/5997cc7c4d6e8ffa20e50aae/ms.files/icon-4.png",
+            "stepscontent1": "Sampling",
+            "stepscontent2": ""
+        },
+        {
+            "stepsid": 5,
+            "stepsimg": "http://cdn.storehippo.com/s/5997cc7c4d6e8ffa20e50aae/ms.files/icon-5.png",
+            "stepscontent1": "Manufacturing",
+            "stepscontent2": ""
+        },
+        {
+            "stepsid": 6,
+            "stepsimg": "http://cdn.storehippo.com/s/5997cc7c4d6e8ffa20e50aae/ms.files/icon-6.png",
+            "stepscontent1": "Delivery",
+            "stepscontent2": ""
+        }
+    ]
+}
