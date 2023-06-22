@@ -32,12 +32,12 @@
     font-size: large;
     left: 664px;
     font-weight: bold;
-    animation: mymove 1s infinite;
+    animation: mymoves 1s infinite;
 
 
 }
 
-@keyframes mymove {
+@keyframes mymoves {
     from {
         top: 600px;
     }
