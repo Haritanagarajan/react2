@@ -110,5 +110,15 @@
             "stepscontent1": "Delivery",
             "stepscontent2": ""
         }
+    ],
+    "fourimgblock": [
+        {
+            "fourid": 1,
+            "fourimg": "https://cdn.storehippo.com/s/5997cc7c4d6e8ffa20e50aae/ms.files/Untitled-1.png"
+        },
+        {
+            "fourid": 2,
+            "fourimg": "https://cdn.storehippo.com/s/5997cc7c4d6e8ffa20e50aae/ms.files/Untitled-2.png"
+        }
     ]
 }

@@ -2,6 +2,7 @@ import React from "react";
 import '../Styles/Enterprice.css';
 import Hondaimg from '../Asserts/Images/Honda.png';
 import { useState, useEffect } from 'react';
+import Designeruniform from './Designeruniform';
 
 
 
@@ -13,6 +14,7 @@ export default function Enterprice() {
 
             <Honda />
             <Steps />
+            <Fourimgblock />
         </div>
     );
 }
@@ -118,6 +120,7 @@ function Steps() {
                             <h1 className="stepscontent1 ms-5">{steps.stepscontent1}</h1>
                             <h1 className="stepscontent2 ms-5">{steps.stepscontent2}</h1>
                         </div>
+
                     </div>
 
                 ))}
@@ -127,5 +130,59 @@ function Steps() {
 
         </div>
 
+
+
     );
 }
+
+
+
+function Fourimgblock() {
+    const [fourimgindex, setfourimgindex] = useState([]);
+    const fetchData = () => {
+        fetch('http://localhost:4000/fourimgblock')
+            .then((response) => response.json())
+            .then((data) => {
+                setfourimgindex(data);
+            });
+    };
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    return (
+        <div className="container-fluid fourimgback">
+
+            <div className="row">
+
+                {fourimgindex.map((four) => (
+                    <div className="col-md-12" key={four.fourid}>
+                        <div className="">
+                            <img src={four.fourimg} alt="fourimg" className="fourimg" />
+                        </div>
+                    </div>
+
+                ))}
+
+
+
+            </div>
+
+            <div className="design row">
+
+                <div className="offset-lg-5 mt-n5">
+
+                <Designeruniform />
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    );
+}
+
+
+

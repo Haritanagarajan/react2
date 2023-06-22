@@ -52,7 +52,7 @@
     background-image: url(http://cdn.storehippo.com/s/5997cc7c4d6e8ffa20e50aae/ms.files/Enterprises-1.jpg);
     background-position: center 122px;
     background-attachment: fixed;
-    min-height: 1000vh;
+    min-height: 555vh;
     background-repeat: no-repeat;
 }
 
@@ -200,3 +200,15 @@
     font-weight: 200;
     font-size: 30px;
 }
+
+
+.fourimg {
+    width: 220vh;
+    margin-left: -60px;
+    height: 750px;
+}
+
+.fourimgback {
+    background-color: black !important;
+}
+
