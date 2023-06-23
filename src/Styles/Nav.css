@@ -1,6 +1,6 @@
 .titlename {
   color: #FFFFFF;
-  margin-left: 570px;
+  margin-left: 600px;
   letter-spacing: 10px;
   padding: 15px 0px 0px;
   font-weight: 400;
@@ -112,7 +112,7 @@
   font-size: 23px;
   font-weight: 400;
   margin-left: -35px;
-  
+
 
 
 }
@@ -137,3 +137,31 @@
 
 }
 
+.navbar-toggler {
+  margin-left: -100px;
+  background-color: aliceblue;
+}
+
+/*media queries*/
+
+@media only screen and (min-width:319px) and (max-width:374px) {
+  .titlename {
+    display: none;
+  }
+
+  .navbar-toggler {
+    font-size:10px;
+    width:35px;
+  }
+
+  .nav-link {
+    color: white;
+    margin-left: 50px;
+  }
+
+  .setting {
+    display: none;
+  }
+
+  
+}

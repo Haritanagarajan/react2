@@ -2,6 +2,7 @@
 
 .threemens {
     margin-left: -1px;
+    width: 100%;
     position: relative;
 }
 
@@ -262,7 +263,194 @@
 }
 
 
+/*media queries*/
+
+@media only screen and (min-width:319px) and (max-width:373px) {
 
 
 
 
+    .threemens2 {
+        margin-top: 100px;
+        margin-left: -710px;
+    }
+
+    .threemens1 {
+        margin-top: 50px;
+    }
+
+    .chooseclasscontent11 {
+        display: none;
+    }
+
+    .chooseclasscontent21 {
+        display: none;
+
+    }
+
+    .chooseclasscontent12 {
+        display: none;
+
+    }
+
+    .chooseclasscontent22 {
+        display: none;
+
+    }
+
+
+    .acecraftforcolleges1 {
+        display: none;
+    }
+
+    .acecraftforcolleges1:hover {
+        color: black;
+    }
+
+
+    .chooseclasscontent1 {
+        display: none;
+    }
+
+    .chooseclasscontent2 {
+        display: none;
+
+    }
+
+
+    .acecraftforcolleges1 {
+        font-size: 13px;
+        background-color: red;
+
+    }
+
+    .acecraftforcolleges2 {
+        font-size: 13px;
+        margin-left: -300px;
+        margin-top: 730px;
+
+    }
+
+
+    .acecraftforcolleges {
+        font-size: 13px;
+        margin-top: 250px;
+
+    }
+
+
+    .borderforchooseclass1 {
+        border: none;
+    }
+
+    .borderforchooseclass2 {
+        border: none;
+
+
+    }
+
+    .borderforchooseclass {
+        border: none;
+
+    }
+
+    .fa-chevron-right {
+        display: none
+    }
+}
+
+
+
+@media only screen and (min-width:374px) and (max-width:423px) {
+
+
+
+
+    .threemens2 {
+        margin-top: 100px;
+        margin-left: -710px;
+    }
+
+    .threemens1 {
+        margin-top: 50px;
+    }
+
+    .chooseclasscontent11 {
+        display: none;
+    }
+
+    .chooseclasscontent21 {
+        display: none;
+
+    }
+
+    .chooseclasscontent12 {
+        display: none;
+
+    }
+
+    .chooseclasscontent22 {
+        display: none;
+
+    }
+
+
+    .acecraftforcolleges1 {
+        display: none;
+    }
+
+    .acecraftforcolleges1:hover {
+        color: black;
+    }
+
+
+    .chooseclasscontent1 {
+        display: none;
+    }
+
+    .chooseclasscontent2 {
+        display: none;
+
+    }
+
+
+    .acecraftforcolleges1 {
+        font-size: 13px;
+        background-color: red;
+
+    }
+
+    .acecraftforcolleges2 {
+        font-size: 13px;
+        margin-left: -300px;
+        margin-top: 730px;
+
+    }
+
+
+    .acecraftforcolleges {
+        font-size: 13px;
+        margin-top: 250px;
+
+    }
+
+
+    .borderforchooseclass1 {
+        border: none;
+    }
+
+    .borderforchooseclass2 {
+        border: none;
+
+
+    }
+
+    .borderforchooseclass {
+        border: none;
+
+    }
+
+    .fa-chevron-right {
+        display: none
+    }
+}

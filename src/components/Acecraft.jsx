@@ -13,9 +13,9 @@ import { Link } from 'react-router-dom';
 export default function Acecraft() {
     return (
 
-        <div style={{ backgroundColor: 'black' }} >
+        <div style={{ backgroundColor: 'black' }} className="container-fluid" >
 
-            <img src={Home1} className="threemens img-responsive  img-fluid col-lg-12 col-md-12 col-sm-12 col-xl-12" alt="images" />
+            <img src={Home1} className="threemens img-responsive  img-fluid " alt="images" />
 
             <div className="borderforchooseclass">
                 <p className="chooseclasscontent1">Choose Class </p>
@@ -36,10 +36,11 @@ export default function Acecraft() {
 
 export function Acecraft1() {
     return (
-        <div>
+
+        <div className="container-fluid">
 
 
-                <img src={Home2} className="threemens1 img-responsive  img-fluid col-lg-12 col-md-12 col-sm-12 col-xl-12" alt="images" />
+            <img src={Home2} className="threemens1 img-responsive  img-fluid" alt="images" />
 
             <div className="borderforchooseclass1">
                 <p className="chooseclasscontent11">A grade </p>
@@ -54,9 +55,9 @@ export function Acecraft1() {
 
 export function Acecraft2() {
     return (
-        <div>
+        <div className="container-fluid">
 
-                <img src={Home3} className="threemens2 img-responsive  img-fluid col-lg-12 col-md-12 col-sm-12 col-xl-12" alt="images" />
+            <img src={Home3} className="threemens2 img-responsive  img-fluid" alt="images" />
 
             <div className="borderforchooseclass2">
                 <p className="chooseclasscontent12">workwear </p>
