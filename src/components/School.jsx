@@ -40,7 +40,7 @@ function Logo() {
             {sclLogo.map((logos) => (
                 <div key={sclLogo.id} className="logo-item text-center">
 
-                    <Link to={`/Schoolproducts/${logos.sclname}`}>
+                    <Link to={`/Schoolproducts/${logos.id}`}>
 
                         <img
                             src={logos.sclimg}

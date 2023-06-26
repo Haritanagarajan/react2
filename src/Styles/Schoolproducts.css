@@ -1,1 +1,46 @@
-.sclimg:hover {}
+.container {
+    margin-top: 20px;
+  }
+  
+  .cardss {
+    position: relative;
+  }
+  
+  .uniform-item-image {
+    transition: transform 0.3s ease;
+  }
+  
+  .uniform-item-image:hover {
+    transform: scale(1.1);
+  }
+  
+  .quick-view-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .quick-view-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .cardss:hover .quick-view-overlay {
+    opacity: 1;
+  }
+  
+  .cardss:hover .quick-view-button {
+    opacity: 1;
+  }
+  
