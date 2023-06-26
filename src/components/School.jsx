@@ -36,16 +36,16 @@ function Logo() {
 
     return (
 
-        <div className="container-fluid d-flex justify-content-center" id='bg1'>
+        <div className="container-fluid d-flex justify-content-center" id="bg1">
             {sclLogo.map((logos) => (
-                <div key={logos.sclid} className="logo-item text-center">
+                <div key={sclLogo.id} className="logo-item text-center">
 
-                    <Link to="/Schoolproducts">
+                    <Link to={`/Schoolproducts/${logos.sclname}`}>
 
                         <img
                             src={logos.sclimg}
                             alt={logos.sclname}
-                            className="logo-img" />
+                            className="logo-img ps-4" />
 
                     </Link>
 

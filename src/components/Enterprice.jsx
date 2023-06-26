@@ -103,12 +103,12 @@ function Steps() {
 
 
                 <div class="timeline">
-                    <div class="point">1</div>
-                    <div class="point">2</div>
-                    <div class="point">3</div>
-                    <div class="point">4</div>
-                    <div class="point">5</div>
-                    <div class="point1">6</div>
+                    <div className="point">1</div>
+                    <div className="point">2</div>
+                    <div className="point">3</div>
+                    <div className="point">4</div>
+                    <div className="point">5</div>
+                    <div className="point1">6</div>
                 </div>
 
 

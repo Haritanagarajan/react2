@@ -131,7 +131,7 @@ export default function College() {
 export function Black() {
 
     return (
-        <div id='bg1' className="row w-100" style={{ color: '#978F8F',backgroundColor:'black' }}>
+        <div id='bg1' className="row w-100" style={{ color: '#978F8F', backgroundColor: 'black' }}>
             <div className="col mt-5">
                 <h2 style={{ fontSize: 40, paddingTop: 90, paddingLeft: 90 }}> Your pretrial.</h2>
                 <h2 style={{ fontSize: 40, paddingLeft: 90, lineHeight: 0.4 }}>Powered by our AI.

@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Pimgback from '../Asserts/Images/Pimgback.jpg';
+import { useParams, useNavigate } from "react-router-dom";
 
 const Schoolproducts = () => {
     const [sclproduct, setsclproduct] = useState([]);
@@ -27,19 +28,32 @@ const Schoolproducts = () => {
     return (
         <>
             <Img />
-
+            <Schoolname />
             <button type="button" className="btn" style={{ fontSize: '27px', color: 'black' }}>SCHOOL<span className="badge" style={{ color: 'grey', textTransform: 'lowercase', fontSize: '19px', fontWeight: '500' }}>-44 items</span ></button>
 
-            <div key={sclproduct.id}>
-                {sclproduct.map((scl) => (
-                    <Link key={sclproduct.id} to={`/Sclproductdisplay/${scl.id}`} style={{ textDecoration: 'none' }}>
-                        <div style={{ marginLeft: 10, display: 'inline-flex', flexDirection: 'col' }}>
-                            <img src={scl.sclproductimg} height={400} width={400} alt={scl.id} />
-                            <span style={{ marginTop: '400px', display: 'block', marginLeft: -130, marginRight: 20, padding: 6 }}>VIEW DETAILS</span>
+            <div className='container mb-3'>
+
+                <div className='row' >
+                    {sclproduct.map((scl) => (
+                        <div className="col-md-4" key={sclproduct.id}>
+                            <div className="cardss">
+                                <div className='text-center '>
+                                    <Link key={sclproduct.id} to={`/Sclproductdisplay/${scl.id}`} style={{ textDecoration: 'none' }}>
+                                        <img src={scl.sclproductimg} height={300} width={300} alt={scl.id} className="mt-5 sclimg" />
+                                        <h5 style={{ color: 'black', fontSize: '13px', fontWeight: '650' }} className="mt-2">{scl.prodname}</h5>
+
+                                    </Link>
+                                </div>
+
+                            </div>
+
                         </div>
-                    </Link>
-                ))}
+                    ))}
+                </div>
+
             </div>
+
+
 
         </>
     );
@@ -65,9 +79,37 @@ function Quotes() {
 
 }
 
-function Hoverdisplay() {
-    <>
 
-    </>
-}
+//for scl logos
+
+const Schoolname = () => {
+    const { sclname } = useParams();
+    const navigate = useNavigate();
+    const [sclLogo, setsclLogo] = useState([]);
+
+    useEffect(() => {
+        fetch(`http://localhost:4000/school/${sclname}`)
+            .then((response) => response.json())
+            .then((data) => setsclLogo(data));
+    }, [sclname]);
+
+    if (!sclLogo) {
+        return <div>Loading...</div>;
+    }
+
+    const handleGoBack = () => {
+        navigate('/School');
+    };
+
+
+    return (
+
+        <div style={{}} key={sclLogo.sclname}>
+            <button className="btn" onClick={handleGoBack} style={{ color: 'black' }}>{sclLogo.sclname}hello</button>
+        </div>
+    );
+};
+
+
+
 export default Schoolproducts;
