@@ -8,6 +8,9 @@ import Enterprice from './components/Enterprice';
 import Notes from './components/Notes';
 import Footer from './components/Footer';
 import Arienmask from './components/Arienmask';
+import Schoolproducts from './components/Schoolproducts';
+import Sclproductdisplay from './components/Sclproductdisplay'
+
 
 function App() {
   return (
@@ -22,6 +25,10 @@ function App() {
 
         <Route exact path='Notes' element={<Notes />} />
         <Route exact path='Arienmask' element={<Arienmask />} />
+        <Route exact path='Schoolproducts' element={<Schoolproducts />} />
+        <Route exact path='Sclproductdisplay/:id' element={<Sclproductdisplay />} />
+
+
 
       </Routes>
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../Styles/School.css'
+import { Link } from 'react-router-dom';
 
 export default function School() {
     return (
@@ -38,10 +39,16 @@ function Logo() {
         <div className="container-fluid d-flex justify-content-center" id='bg1'>
             {sclLogo.map((logos) => (
                 <div key={logos.sclid} className="logo-item text-center">
-                    <img
-                        src={logos.sclimg}
-                        alt={logos.sclname}
-                        className="logo-img" />
+
+                    <Link to="/Schoolproducts">
+
+                        <img
+                            src={logos.sclimg}
+                            alt={logos.sclname}
+                            className="logo-img" />
+
+                    </Link>
+
                     <p className="school-name" style={{ color: 'black', fontWeight: '500' }}>{logos.sclname}</p>
                     <p className="mt-n3" style={{ color: 'black', fontWeight: '500' }}>{logos.sclname2}</p>
 
@@ -118,7 +125,7 @@ function Thirdscroll() {
 
 function Fourthscroll() {
     return (
-        <section className="bg-black">
+        <section className="bg-black" style={{ color: '#978F8F' }}>
             <div className="container">
                 <div id="text2">
                     <div className="text-end">

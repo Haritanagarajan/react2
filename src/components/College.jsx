@@ -117,10 +117,10 @@ export default function College() {
                 <Black />
             </div>
 
-            <div className="" style={{backgroundColor:"black"}}>
-                <img src={College3} alt="college3img" className="" style={{borderColor: 'black'}} />
+            <div className="" style={{ backgroundColor: "black" }}>
+                <Fifthscroll />
+                <img src={College3} alt="college3img" className="" style={{ borderColor: 'black' }} />
             </div>
-
         </>
 
 
@@ -131,7 +131,7 @@ export default function College() {
 export function Black() {
 
     return (
-        <div id='bg1' className="row w-100" style={{ color: '#978F8F' }}>
+        <div id='bg1' className="row w-100" style={{ color: '#978F8F',backgroundColor:'black' }}>
             <div className="col mt-5">
                 <h2 style={{ fontSize: 40, paddingTop: 90, paddingLeft: 90 }}> Your pretrial.</h2>
                 <h2 style={{ fontSize: 40, paddingLeft: 90, lineHeight: 0.4 }}>Powered by our AI.
@@ -164,4 +164,25 @@ export function Black() {
             </div>
         </div>
     )
+}
+
+function Fifthscroll() {
+    return (
+        <section className="offset-5 mt-5 pt-5" style={{ color: '#978F8F', background: 'none', position: 'absolute' }}>
+            <div className="col-md-12 pt-5 content text-center">
+                <div className="text-center pt-5 ms-mb-x">
+                    <p className="ms-m-0" style={{ fontSize: '28px', fontWeight: '400' }}>Designer Uniforms</p>
+                    <div className="text-center horizontal-line signature">
+                        <span>by</span>
+                    </div>
+                    <p className="fs-2 fw-lighter" style={{ fontFamily: 'Courier New, monospace' }}>
+                        acecraft
+                    </p>
+                </div>
+                <div>
+                    <button className="btn  mt-5 text-white" style={{ border: '1px solid white' }}>Get In Touch</button>
+                </div>
+            </div>
+        </section>
+    );
 }
