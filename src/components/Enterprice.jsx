@@ -172,7 +172,7 @@ function Fourimgblock() {
 
                 <div className="offset-lg-5 mt-n5">
 
-                <Designeruniform />
+                    <Designeruniform />
 
                 </div>
 

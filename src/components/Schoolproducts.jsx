@@ -29,7 +29,7 @@ const Schoolproducts = () => {
     return (
         <>
             <Imgg />
-            <School />
+            {/* <School /> */}
             <button type="button" className="btn" style={{ fontSize: '27px', color: 'black' }}>SCHOOL<span className="badge" style={{ color: 'grey', textTransform: 'lowercase', fontSize: '19px', fontWeight: '500' }}>-44 items</span ></button>
 
             <div className='container mb-3'>
@@ -77,33 +77,33 @@ function Quotes() {
     );
 }
 
-const School = () => {
-    const { id } = useParams();
-    const navigate = useNavigate();
-    const [sclLogo, setsclLogo] = useState([]);
+// const School = () => {
+//     const { id } = useParams();
+//     const navigate = useNavigate();
+//     const [sclLogo, setsclLogo] = useState([]);
 
-    useEffect(() => {
-        fetch(`http://localhost:4000/school/${id}`)
-            .then((response) => response.json())
-            .then((data) => setsclLogo(data))
-            .catch((error) => {
-                console.error('Error fetching school data:', error);
-            });
-    }, [id]);
+//     useEffect(() => {
+//         fetch(`http://localhost:4000/school/${id}`)
+//             .then((response) => response.json())
+//             .then((data) => setsclLogo(data))
+//             .catch((error) => {
+//                 console.error('Error fetching school data:', error);
+//             });
+//     }, [id]);
 
-    if (!sclLogo) {
-        return <div>Loading...</div>;
-    }
+//     if (!sclLogo) {
+//         return <div>Loading...</div>;
+//     }
 
-    const handleGoBack = () => {
-        navigate('/School');
-    };
+//     const handleGoBack = () => {
+//         navigate('/School');
+//     };
 
-    return (
-        <div style={{}} key={sclLogo.id}>
-            <h5 onClick={handleGoBack} >{sclLogo.sclname}</h5>
-        </div>
-    );
-};
+//     return (
+//         <div style={{}} key={sclLogo.id}>
+//             <h5 onClick={handleGoBack} >{sclLogo.sclname}</h5>
+//         </div>
+//     );
+// };
 
 export default Schoolproducts;

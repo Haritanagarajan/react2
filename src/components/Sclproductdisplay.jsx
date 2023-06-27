@@ -228,7 +228,7 @@ const Sclproductdisplay = () => {
                         data-bs-target="#example2Modal" className='btn mt-5 ms-n2' style={{ backgroundColor: 'black', color: 'white', fontSize: '15px' }}>
                         ADD TO CART
                     </button>
-                    <button type='button' className='btn' style={{ backgroundColor: 'black', color: 'white', fontSize: '15px' }}>
+                    <button type='button' className='btn mt-5' style={{ backgroundColor: 'black', color: 'white', fontSize: '15px' }}>
                         BUY NOW
                     </button>
 
@@ -262,11 +262,14 @@ const Sclproductdisplay = () => {
             {/* // modal for add to cart */}
 
             <div className="modal fade" id="example2Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-                <div className="modal-dialog" style={{backgroundColor:'greenyellow'}}>
+                <div className="modal-dialog" style={{ backgroundColor: 'greenyellow' }}>
                     <div className="modal-content" style={{ width: '800px' }}>
                         <div className="modal-header">
-                            <h3 className="modal-title text-center justify-content-center" id="exampleModalLabel" style={{ color: 'green' }}>Product Added Successfully</h3>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div className='modal-body' style={{ color: 'black' }}>
+                            <img className='ms-5 ps-3' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxMet42naDM9YFKIvBoPdYO8eCljS2s8R9tA&usqp=CAU" alt="addtocart" style={{ backgroundColor: 'white', width: '95px' }} />
+                            <h3 className="modal-title text-center justify-content-center mt-n5" id="exampleModalLabel" >Product Added Successfully</h3>
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn" data-bs-dismiss="modal" style={{ backgroundColor: 'black', color: 'white' }}>Close</button>
