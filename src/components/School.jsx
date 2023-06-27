@@ -46,7 +46,6 @@ function Logo() {
                             src={logos.sclimg}
                             alt={logos.sclname}
                             className="logo-img ps-4" />
-
                     </Link>
 
                     <p className="school-name" style={{ color: 'black', fontWeight: '500' }}>{logos.sclname}</p>

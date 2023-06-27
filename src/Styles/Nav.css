@@ -48,12 +48,17 @@
 
 
 #areamask {
-  width: 140px;
+  width: 110px;
 }
 
 #areamask:hover {
   color: white;
   font-weight: bold;
+}
+
+.nav-link:focus {
+  border-bottom: solid grey .2em;
+  margin-bottom: 1em;
 }
 
 .badge:hover {
@@ -149,8 +154,8 @@
   }
 
   .navbar-toggler {
-    font-size:10px;
-    width:35px;
+    font-size: 10px;
+    width: 35px;
   }
 
   .nav-link {
@@ -162,5 +167,5 @@
     display: none;
   }
 
-  
+
 }

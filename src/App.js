@@ -9,7 +9,8 @@ import Notes from './components/Notes';
 import Footer from './components/Footer';
 import Arienmask from './components/Arienmask';
 import Schoolproducts from './components/Schoolproducts';
-import Sclproductdisplay from './components/Sclproductdisplay'
+import Sclproductdisplay from './components/Sclproductdisplay';
+import Errorcomponent from './components/Errorcomponent';
 
 
 function App() {
@@ -27,9 +28,10 @@ function App() {
         <Route exact path='Arienmask' element={<Arienmask />} />
         <Route exact path='Schoolproducts/:sclname' element={<Schoolproducts />} />
         <Route exact path='Sclproductdisplay/:id' element={<Sclproductdisplay />} />
+        <Route exact path='*' element={<Errorcomponent />} />
 
       </Routes>
-
+      
       <Footer />
 
 
