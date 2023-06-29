@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../Styles/Sclproductdisplay.css';
 import Sizechart from '../Asserts/Images/Sizechart.png';
+import { useCart,CartProvider } from "react-use-cart";
 
 
 const Sclproductdisplay = () => {
+    const { addItem } = useCart();
     const { id } = useParams();
     const navigate = useNavigate();
     const [sclproduct, setsclproduct] = useState(null);
@@ -43,6 +45,18 @@ const Sclproductdisplay = () => {
 
     const handleQuantitySelect = (quantity) => {
         setSelectedQuantity(quantity);
+    };
+    const handleAddToCart = () => {
+        const item = {
+          image: sclproduct.sclproductimg,
+          id: sclproduct.id,
+          title:sclproduct.prodname,
+          price:sclproduct.dprice
+    
+         
+        };
+        addItem(item);
+        console.log('Item added to cart:', item);
     };
 
     return (
@@ -224,10 +238,13 @@ const Sclproductdisplay = () => {
                         </label>
                     </div>
 
-                    <button type='button' data-bs-toggle="modal"
-                        data-bs-target="#example2Modal" className='btn mt-5 ms-n2' style={{ backgroundColor: 'black', color: 'white', fontSize: '15px' }}>
-                        ADD TO CART
-                    </button>
+                    <CartProvider>
+                        <button type='button' data-bs-toggle="modal"  onClick={handleAddToCart} 
+                            data-bs-target="#example2Modal" className='btn mt-5 ms-n2' style={{ backgroundColor: 'black', color: 'white', fontSize: '15px' }}>
+                            ADD TO CART
+                        </button>
+                    </CartProvider>
+
                     <button type='button' className='btn mt-5' style={{ backgroundColor: 'black', color: 'white', fontSize: '15px' }}>
                         BUY NOW
                     </button>

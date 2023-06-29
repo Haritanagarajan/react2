@@ -15,17 +15,15 @@ export default function Designeruniform() {
 
             <div className="modal fade example3Modal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
-                    <div className="modal-content" style={{ width: '600px', height: '560px' }}>
+                    <div className="modal-content" style={{ width: '550px', height: '560px' }}>
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" style={{ color: '#000000', fontSize: '10px' }}></button>
                         <h5 className="modal-title exampleModalLabel text-center mt-5" style={{ fontSize: '30px', fontWeight: '640' }}>Get your Uniforms designed and<br /> styled by Us!</h5>
                         <div className="container-fluid icons">
-                            <form className="was-validated">
+                            <form>
                                 <div className="row">
                                     <div className="col-6">
                                         <div className="input-group">
-                                            <span className="input-group-text">
-                                                <i class="fa-solid fa-user fa-2xl icon" style={{ color: '#d2d0d0' }}></i>
-                                            </span>
+
                                             <input type="text" className="form-control" placeholder="First Name" style={{ fontWeight: '650' }} />
                                         </div>
                                     </div>
@@ -39,27 +37,20 @@ export default function Designeruniform() {
                                 <br />
                                 <div className="row">
                                     <div className="input-group">
-                                        <span className="input-group-text">
-                                            <i class="fa-solid fa-envelope fa-2xl icon" style={{ color: '#d2d0d0' }}></i>
-                                        </span>
                                         <input type="email" className="form-control" placeholder="Professional Email" style={{ fontWeight: '650' }} />
                                     </div>
                                 </div>
                                 <br />
                                 <div className="row">
                                     <div className="input-group">
-                                        <span className="input-group-text">
-                                            <i className="fa-solid fa-building fa-2xl icon" style={{ color: '#d2d0d0' }}></i>
-                                        </span>
+
                                         <input type="text" className="form-control" placeholder="Organisation" style={{ fontWeight: '650' }} />
                                     </div>
                                 </div>
                                 <br />
                                 <div className="row">
                                     <div className="input-group">
-                                        <span className="input-group-text">
-                                            <i class="fa-solid fa-mobile fa-2xl icon" style={{ color: '#d2d0d0' }}></i>
-                                        </span>
+
                                         <input type="text" className="form-control" placeholder="Phone No." style={{ fontWeight: '650' }} />
                                     </div>
                                 </div>
