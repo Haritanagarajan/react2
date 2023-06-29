@@ -56,9 +56,11 @@
   font-weight: bold;
 }
 
+/*nav-link focus*/
 .nav-link:focus {
   border-bottom: solid grey .2em;
   margin-bottom: 1em;
+  color:white;
 }
 
 .badge:hover {
