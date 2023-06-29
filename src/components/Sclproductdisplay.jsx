@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../Styles/Sclproductdisplay.css';
 import Sizechart from '../Asserts/Images/Sizechart.png';
-import { useCart,CartProvider } from "react-use-cart";
+import { useCart, CartProvider } from "react-use-cart";
 
 
 const Sclproductdisplay = () => {
@@ -48,12 +48,12 @@ const Sclproductdisplay = () => {
     };
     const handleAddToCart = () => {
         const item = {
-          image: sclproduct.sclproductimg,
-          id: sclproduct.id,
-          title:sclproduct.prodname,
-          price:sclproduct.dprice
-    
-         
+            image: sclproduct.sclproductimg,
+            id: sclproduct.id,
+            title: sclproduct.prodname,
+            price: sclproduct.dprice,
+            Quantity: selectedQuantity,
+            Size: selectedSize
         };
         addItem(item);
         console.log('Item added to cart:', item);
@@ -239,7 +239,7 @@ const Sclproductdisplay = () => {
                     </div>
 
                     <CartProvider>
-                        <button type='button' data-bs-toggle="modal"  onClick={handleAddToCart} 
+                        <button type='button' data-bs-toggle="modal" onClick={handleAddToCart}
                             data-bs-target="#example2Modal" className='btn mt-5 ms-n2' style={{ backgroundColor: 'black', color: 'white', fontSize: '15px' }}>
                             ADD TO CART
                         </button>

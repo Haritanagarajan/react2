@@ -32,8 +32,8 @@ function App() {
 
         <Route exact path='Notes' element={<Notes />} />
         <Route exact path='Arienmask' element={<Arienmask />} />
-        <Route exact path='Schoolproducts/:sclname' element={<Schoolproducts />} />
-        <Route exact path='Sclproductdisplay/:id' element={<Sclproductdisplay />} />
+        <Route exact path='/Schoolproducts/:sclname' element={<Schoolproducts />} />
+        <Route exact path='/Sclproductdisplay/:id' element={<Sclproductdisplay />} />
         <Route exact path='*' element={<Errorcomponent />} />
         <Route exact path="Register" element={<Register />}></Route>
         <Route exact path="Signin" element={<Signin />}></Route>
