@@ -10,8 +10,8 @@ const Sclproductdisplay = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [sclproduct, setsclproduct] = useState(null);
-    const [selectedSize, setSelectedSize] = useState('');
-    const [selectedQuantity, setSelectedQuantity] = useState('');
+    const [selectedSize, setSelectedSize] = useState('22');
+    const [selectedQuantity, setSelectedQuantity] = useState('1');
     const [amount, setAmount] = useState('0');
 
     useEffect(() => {

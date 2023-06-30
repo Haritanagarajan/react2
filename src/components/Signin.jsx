@@ -21,6 +21,8 @@ const SignIn = () => {
 
                 if (registeruser) {
                     console.log("Login success");
+                    //    setusername(username)
+
                     navigate("/Acecraft");
 
                 } else {
@@ -56,6 +58,7 @@ const SignIn = () => {
                                 value={password}
                                 onChange={(e) => setpassword(e.target.value)}
                             />
+
                         </div>
 
                         <div className="d-flex justify-content-center mt-4">

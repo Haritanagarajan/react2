@@ -10,8 +10,6 @@ const Cart = () => {
         isEmpty,
         updateItemQuantity,
         emptyCart,
-        totalItems,
-        totalUniqueItems,
         cartTotal
     } = useCart();
 
@@ -20,38 +18,25 @@ const Cart = () => {
     }
 
     const totalprice = (item) => {
-        return item.price * item.quantity + item.Size;
+        return Number(item.price) + Number(item.quantity) + Number(item.Size);
     };
 
     const { items } = useCart();
 
-    if (isEmpty) return <h1 className="text-center" style={{ marginTop: 100 }}>Cart is Empty</h1>;
+    if (isEmpty) return (<><h1 className="text-center" style={{ marginTop: 100 }}>Cart is Empty</h1>;
+        <button className="btn btn-primary m-2" onClick={backtoschool}>Continue Shopping</button>
+    </>);
 
     return (
         <div>
-            {/* {items.map((item) => (
-                <div key={item.id}>
-                    <h3 onClick={backtoschool}>{item.title}</h3>
-                    <button type="button" className='btn' onClick={backtoschool}><img src={item.image} alt={item.title} style={{ width: '100px' }} />   </button>
-                    <p>Price: {item.price}</p>
-                    <p>Quantity: {item.Quantity}</p>
-                    <p>Size: {item.Size}</p>
-                    <p>Total price: {totalprice(item)}</p>
-                    <button type="button" className='btn' onClick={() => removeItem(item.id)}>remove</button>
-                </div>
-            ))}
-            
-             */}
-
             <div className="row justify-content-center">
                 <div className="col-12 text-center mt-5">
 
                     <div className="col-auto ms-auto">
                         <h1>Your Bag total is ₹{cartTotal}</h1>
                     </div>
-                    <hr />
                     <br />
-                    <table className="table table-light table-hover m-0">
+                    <table className="table">
                         <tbody>
                             <tr>
                                 <td style={{ padding: "0px 100px 0px 10px" }}> </td>
@@ -59,48 +44,47 @@ const Cart = () => {
                                 <td style={{ padding: "0px 50px 0px 0px" }}></td>
                                 <td style={{ padding: "0px 50px 0px 0px" }}></td>
                             </tr>
+
                             {items.map((item, index) => {
                                 return (
                                     <tr key={index}>
                                         <td>
-                                            <img src={item.image} style={{ height: "6rem" }} alt="" />
+                                            <img src={item.image} style={{ height: "25rem" }} alt="" />
                                         </td>
-                                        <td>{item.title}</td>
-                                        <td>{item.price *item.quantity}</td>
-                                        <td> {item.quantity}</td>
-                                        <td>
-                                            <button
-                                                style={{ border: "2px solid red" }}
-                                                className="btn btn-light ms-2"
-                                                onClick={() =>
-                                                    updateItemQuantity(item.id, item.quantity - 1)
-                                                }
-                                            >
-                                                –
-                                            </button>
-                                            <button
-                                                style={{ border: "2px solid #fcba03" }}
-                                                className="btn btn-light ms-2"
-                                                onClick={() =>
-                                                    updateItemQuantity(item.id, item.quantity + 1)
-                                                }
-                                            >
-                                                +
-                                            </button>
-                                            <button
-                                                className="btn btn-dark ms-2"
-                                                onClick={() => removeItem(item.id)}
-                                            >
-                                                Remove Item
-                                            </button>
-                                        </td>
+                                        <td style={{ fontSize: '20px', fontWeight: '500' }}>{item.title}<h6 className='ms-n5' style={{ fontWeight: '600',fontSize:'13px' }}>Size:{item.Size}</h6></td>
+                                        <button
+                                            style={{ fontWeight: 'bold', fontSize: '20px', border: 'none' }}
+                                            className=" ms-5" type='button'
+                                            onClick={() =>
+                                                updateItemQuantity(item.id, item.quantity - 1)
+                                            }
+                                        >
+                                            –
+                                        </button>
+                                        <b>{item.quantity}</b>
+                                        <button
+                                            style={{ fontWeight: 'bold', fontSize: '20px', border: 'none' }}
+                                            className="" type='button'
+                                            onClick={() =>
+                                                updateItemQuantity(item.id, item.quantity + 1)
+                                            }
+                                        >
+                                            +
+                                        </button>
+                                        <td style={{ fontWeight: '600', fontSize: '20px', border: 'none' }}>₹{totalprice(item)}</td>
+
+                                        <button
+                                            className="btn mt-n5" style={{ color: 'red',fontSize:'14px' }}
+                                            onClick={() => removeItem(item.id)}
+                                        >
+                                          Remove
+                                        </button>
                                     </tr>
                                 );
                             })}
                         </tbody>
                     </table>
                 </div>
-                <hr />
                 <br />
 
                 <div className="col-auto ms-auto">
@@ -109,16 +93,12 @@ const Cart = () => {
                     </button>
                     <button className="btn btn-primary m-2" onClick={backtoschool}>Continue Shopping</button>
                 </div>
-                {/* </div> */}
             </div>
         </div>
     );
 };
 
 
-{/* <h5>
-  Cart ({totalUniqueItems}) total Items: ({totalItems})
-                    </h5> */}
 
 
 
