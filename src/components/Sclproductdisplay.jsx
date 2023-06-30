@@ -3,6 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import '../Styles/Sclproductdisplay.css';
 import Sizechart from '../Asserts/Images/Sizechart.png';
 import { useCart, CartProvider } from "react-use-cart";
+// import Carousel from 'react-bootstrap/Carousel';
+
 
 
 const Sclproductdisplay = () => {
@@ -10,9 +12,10 @@ const Sclproductdisplay = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [sclproduct, setsclproduct] = useState(null);
-    const [selectedSize, setSelectedSize] = useState('22');
-    const [selectedQuantity, setSelectedQuantity] = useState('1');
+    const [selectedSize, setSelectedSize] = useState('');
+    const [selectedQuantity, setSelectedQuantity] = useState('');
     const [amount, setAmount] = useState('0');
+
 
     useEffect(() => {
         fetch(`http://localhost:4000/sclproducts/${id}`)
@@ -43,9 +46,10 @@ const Sclproductdisplay = () => {
         setSelectedSize(size);
     };
 
-    const handleQuantitySelect = (quantity) => {
-        setSelectedQuantity(quantity);
+    const handleQuantitySelect = (quantitys) => {
+        setSelectedQuantity(quantitys);
     };
+
     const handleAddToCart = () => {
         const item = {
             image: sclproduct.sclproductimg,
@@ -57,6 +61,29 @@ const Sclproductdisplay = () => {
         };
         addItem(item);
         console.log('Item added to cart:', item);
+
+
+        fetch('http://localhost:4000/Cartstorage', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(item)
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Item added to cart:', data);
+                // Handle the response from the server, if needed
+            })
+            .catch(error => {
+                console.error('Error adding item to cart:', error);
+                // Handle the error, if needed
+            });
+
+
+
+            
+
     };
 
     return (
@@ -279,23 +306,16 @@ const Sclproductdisplay = () => {
             {/* // modal for add to cart */}
 
             <div className="modal fade" id="example2Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-                <div className="modal-dialog" style={{ backgroundColor: 'greenyellow' }}>
-                    <div className="modal-content" style={{ width: '800px' }}>
+                <div className="modal-dialog" >
+                    <div className="modal-content" style={{ width: '800px', backgroundColor: 'LightGreen' }}>
                         <div className="modal-header">
+                            <h6 className='text-center' style={{ color: 'green', fontWeight: '600' }}>Yahoo! :) Your product added Succeesfully.....</h6>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div className='modal-body' style={{ color: 'black' }}>
-                            <img className='ms-5 ps-3' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxMet42naDM9YFKIvBoPdYO8eCljS2s8R9tA&usqp=CAU" alt="addtocart" style={{ backgroundColor: 'white', width: '95px' }} />
-                            <h3 className="modal-title text-center justify-content-center mt-n5" id="exampleModalLabel" >Product Added Successfully</h3>
-                        </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn" data-bs-dismiss="modal" style={{ backgroundColor: 'black', color: 'white' }}>Close</button>
                         </div>
                     </div>
                 </div>
             </div>
-
-
+            <Description />
 
         </div>
 
@@ -304,6 +324,16 @@ const Sclproductdisplay = () => {
 
 
 
+function Description() {
+    return (
+        <div className='mt-5 pt-5 ms-5 '>
+            <h6 style={{ color: 'black', fontWeight: '500' }}>Description of product</h6>
+            <h5 style={{ color: 'black', fontWeight: '600' }}> NO RETURNS & NO EXCHANGE.</h5>
+            <h6 style={{ color: 'black', fontWeight: '400' }}> Made from Poly-cotton. Henley neckline. Short sleeves.</h6>
+            <h6 style={{ color: 'black', fontWeight: '500' }} className='mt-5'>Related products</h6>
 
+        </div>
+    )
+}
 
 export default Sclproductdisplay;

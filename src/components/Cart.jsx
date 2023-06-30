@@ -1,8 +1,11 @@
 import React from 'react';
 import { useCart } from 'react-use-cart';
 import { useNavigate } from 'react-router-dom';
+// import { useEffect } from 'react';
+
 
 const Cart = () => {
+    const { items } = useCart();
 
     const navigate = useNavigate();
     const {
@@ -13,22 +16,26 @@ const Cart = () => {
         cartTotal
     } = useCart();
 
+
+
     const backtoschool = () => {
         navigate("/Schoolproducts/:sclname");
     }
 
     const totalprice = (item) => {
-        return Number(item.price) + Number(item.quantity) + Number(item.Size);
+        return Number(item.price) * Number(item.quantity) + Number(item.Size);
     };
 
-    const { items } = useCart();
 
-    if (isEmpty) return (<><h1 className="text-center" style={{ marginTop: 100 }}>Cart is Empty</h1>;
-        <button className="btn btn-primary m-2" onClick={backtoschool}>Continue Shopping</button>
-    </>);
+    if (isEmpty) return (
+        <>
+            <h1 className="ms-5" style={{ marginTop: 100 }}>Oops! &#128533; your cart is empty</h1>;
+            <h1 className=" mt-1 offset-4" onClick={backtoschool} style={{ fontSize: '17px', color: 'green', marginBottom: '400px' }}>-Continue Shopping Click me !  &#128526;</h1>
+        </>
+    );
 
     return (
-        <div className="row justify-content-center" >
+        <div className="row justify-content-center ">
             <div className="col-12 text-center mt-5">
 
                 <div className="col-auto ms-auto">
@@ -53,7 +60,7 @@ const Cart = () => {
                                     >
                                         –
                                     </button>
-                                    <b>{item.quantity}</b>
+                                    <b>{item.Quantity}</b>
                                     <button
                                         style={{ fontWeight: 'bold', fontSize: '20px', border: 'none' }}
                                         className="" type='button'
@@ -77,18 +84,24 @@ const Cart = () => {
                     </tbody>
                 </table>
             </div>
-            <div className="col-12-auto ms-auto">
-                <h1 style={{ color: '#978F8F', fontSize: '20px' }} className='float-end ms-n5'>Sub Total ₹{cartTotal}</h1>
-            </div>
-            <div className="col-12-auto ms-auto" >
-                <h1 style={{ color: 'black', fontSize: '30px' }} className='float-end ms-n5'>Total ₹{cartTotal}</h1>
+            <div className="row offset-11 ">
+                <h1 style={{ color: '#978F8F', fontSize: '20px' }} className='col-3 ps-5'>Sub Total </h1>
+                <h1 style={{ color: '#978F8F', fontSize: '20px' }} className='col-7'>₹{cartTotal}</h1>
             </div>
 
-            <div className="col-auto ms-auto">
-                <button className="btn btn-danger m-2" onClick={() => emptyCart()}>
+            <div className="row  offset-11 pt-3" >
+                <h1 style={{ color: 'black', fontSize: '30px' }} className='col-3 ps-5'>Total</h1>
+                <h1 style={{ color: 'black', fontSize: '30px' }} className='col-7'>₹{cartTotal}</h1>
+
+            </div>
+
+            <div className="col offset-8">
+
+                <button className="btn mt-5 mb-5" onClick={() => emptyCart()} style={{ color: 'white', backgroundColor: 'black', fontSize: '14px' }}>
                     Clear Cart
                 </button>
-                <button className="btn btn-primary m-2" onClick={backtoschool}>Continue Shopping</button>
+
+                <button className="btn mt-5 mb-5" onClick={backtoschool} style={{ color: 'white', backgroundColor: 'black', fontSize: '14px' }}>Continue Shopping</button>
             </div>
         </div>
     );

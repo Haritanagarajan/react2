@@ -17,7 +17,7 @@ export default function Navbar() {
     return (
         <div className='navbarfull sticky-top' >
 
-            <Link className='titlename  sm-none text' to="/">acecraft</Link>
+            <Link className='titlename  sm-none text' to="/Acecraft">acecraft</Link>
 
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
@@ -27,11 +27,11 @@ export default function Navbar() {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav text-center">
-                            <Link className='nav-link' aria-current="page" to="School">SCHOOL</Link>
-                            <Link className='nav-link' to="College">COLLEGE</Link>
-                            <Link className='nav-link' to="Enterprice">ENTERPRISE</Link>
-                            <Link className='nav-link notes' to="Notes">NOTES</Link>
-                            <Link className='nav-link' id='areamask' to="Arienmask">ARIEN MASK</Link>
+                            <Link className='nav-link' aria-current="page" to="/School">SCHOOL</Link>
+                            <Link className='nav-link' to="/College">COLLEGE</Link>
+                            <Link className='nav-link' to="/Enterprice">ENTERPRISE</Link>
+                            <Link className='nav-link notes' to="/Notes">NOTES</Link>
+                            <Link className='nav-link' id='areamask' to="/Arienmask">ARIEN MASK</Link>
 
                             <div className='setting'>
                                 <li className='companymenuli'><Link class="alisting"><img src={setting} width='20px' alt="settings" /><b class="caret"></b></Link>

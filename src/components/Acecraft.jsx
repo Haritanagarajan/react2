@@ -20,7 +20,7 @@ export default function Acecraft() {
             <div className="borderforchooseclass">
                 <p className="chooseclasscontent1">Choose Class </p>
                 <p className="chooseclasscontent2">over the common.</p>
-                <Link to="College" className="acecraftforcolleges">ACECRAFT FOR COLLEGES</Link>
+                <Link to="/College" className="acecraftforcolleges">ACECRAFT FOR COLLEGES</Link>
                 <i className="arrowright" class="fas fa-chevron-right "></i>
             </div>
 
@@ -45,7 +45,7 @@ export function Acecraft1() {
             <div className="borderforchooseclass1">
                 <p className="chooseclasscontent11">A grade </p>
                 <p className="chooseclasscontent21">of Greatness.</p>
-                <Link to="School" className="acecraftforcolleges1">ACECRAFT FOR SCHOOLS</Link>
+                <Link to="/School" className="acecraftforcolleges1">ACECRAFT FOR SCHOOLS</Link>
                 <i className="arrowright" class="fas fa-chevron-right "></i>
             </div>
 
@@ -62,7 +62,7 @@ export function Acecraft2() {
             <div className="borderforchooseclass2">
                 <p className="chooseclasscontent12">workwear </p>
                 <p className="chooseclasscontent22">Redefined.</p>
-                <Link to="Enterprice" className="acecraftforcolleges2">ACECRAFT FOR ENTERPRISES</Link>
+                <Link to="/Enterprice" className="acecraftforcolleges2">ACECRAFT FOR ENTERPRISES</Link>
                 <i className="arrowright" class="fas fa-chevron-right "></i>
             </div>
         </div>
