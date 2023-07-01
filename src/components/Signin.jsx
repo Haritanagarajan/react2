@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 const SignIn = () => {
     const [username, setusername] = useState("");
     const [password, setpassword] = useState("");
+    const [loggedIn, setLoggedIn] = useState(false); // Track login status
     const navigate = useNavigate();
 
 
@@ -21,8 +22,7 @@ const SignIn = () => {
 
                 if (registeruser) {
                     console.log("Login success");
-                    //    setusername(username)
-
+                    setLoggedIn(true); // Update login status
                     navigate("/Acecraft");
 
                 } else {
@@ -33,6 +33,11 @@ const SignIn = () => {
                 console.error("Error:", error);
             });
     };
+
+    if (loggedIn) {
+        const signin = document.getElementById('cont');
+        signin.style.display = "none";
+    }
 
     return (
         <div className="container" id="cont" >

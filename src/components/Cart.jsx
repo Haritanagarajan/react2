@@ -1,7 +1,6 @@
 import React from 'react';
 import { useCart } from 'react-use-cart';
 import { useNavigate } from 'react-router-dom';
-// import { useEffect } from 'react';
 
 
 const Cart = () => {
@@ -51,6 +50,7 @@ const Cart = () => {
                                         <img src={item.image} style={{ height: "25rem" }} alt="" onClick={backtoschool} />
                                     </td>
                                     <td style={{ fontSize: '20px', fontWeight: '500', border: 'none' }}>{item.title}<h6 className='ms-n5' style={{ fontWeight: '600', fontSize: '13px' }}>Size:{item.Size}</h6></td>
+
                                     <button
                                         style={{ fontWeight: 'bold', fontSize: '20px', border: 'none' }}
                                         className=" ms-5" type='button'
@@ -60,7 +60,7 @@ const Cart = () => {
                                     >
                                         –
                                     </button>
-                                    <b>{item.Quantity}</b>
+                                    <b>{item.quantity}</b>
                                     <button
                                         style={{ fontWeight: 'bold', fontSize: '20px', border: 'none' }}
                                         className="" type='button'
@@ -78,6 +78,7 @@ const Cart = () => {
                                     >
                                         Remove
                                     </button>
+
                                 </tr>
                             );
                         })}

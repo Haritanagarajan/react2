@@ -13,7 +13,7 @@ const Sclproductdisplay = () => {
     const navigate = useNavigate();
     const [sclproduct, setsclproduct] = useState(null);
     const [selectedSize, setSelectedSize] = useState('');
-    const [selectedQuantity, setSelectedQuantity] = useState('');
+    const [selectedQuantity, setSelectedQuantity] = useState(1);
     const [amount, setAmount] = useState('0');
 
 
@@ -46,8 +46,8 @@ const Sclproductdisplay = () => {
         setSelectedSize(size);
     };
 
-    const handleQuantitySelect = (quantitys) => {
-        setSelectedQuantity(quantitys);
+    const handleQuantitySelect = (quantity) => {
+        setSelectedQuantity(quantity);
     };
 
     const handleAddToCart = () => {
@@ -56,12 +56,15 @@ const Sclproductdisplay = () => {
             id: sclproduct.id,
             title: sclproduct.prodname,
             price: sclproduct.dprice,
+            totalprice: amount,
             Quantity: selectedQuantity,
             Size: selectedSize
         };
         addItem(item);
         console.log('Item added to cart:', item);
 
+
+        //create cart items 
 
         fetch('http://localhost:4000/Cartstorage', {
             method: 'POST',
@@ -73,18 +76,37 @@ const Sclproductdisplay = () => {
             .then(response => response.json())
             .then(data => {
                 console.log('Item added to cart:', data);
-                // Handle the response from the server, if needed
             })
             .catch(error => {
                 console.error('Error adding item to cart:', error);
-                // Handle the error, if needed
             });
-
-
-
-            
-
     };
+
+    fetch(`http://localhost:4000/Cartstorage/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            id: id,
+            image: sclproduct.sclproductimg,
+            title: sclproduct.prodname,
+            price: sclproduct.dprice,
+            totalprice:sclproduct.dprice,
+            Quantity:selectedQuantity,
+            Size:selectedSize
+
+        })
+    })
+        .then(response => response.json())
+        .then(data => {
+
+            console.log('Item edited:', data);
+        })
+        .catch(error => {
+            console.error('Error editing item:', error);
+
+        });
 
     return (
         <div style={{ paddingBottom: '500px' }} className='container-fluid'>
@@ -191,9 +213,9 @@ const Sclproductdisplay = () => {
                                 height: '34px',
                                 fontWeight: '400',
                             }}
-                            onClick={() => handleSizeSelect(sclproduct.size)}
+                            onClick={() => handleSizeSelect(selectedSize)}
                         >
-                            Size: {selectedSize || sclproduct.size}
+                            Size: {selectedSize}
                         </button>
                         <button
                             type='button'
@@ -203,11 +225,11 @@ const Sclproductdisplay = () => {
                             style={{ width: '150px', color: 'black', fontSize: '15px' }}
                         >
                             <span className='visually-hidden'>
-                                {selectedSize || sclproduct.size}
+                                {selectedSize}
                             </span>
                             {selectedSize && (
                                 <span style={{ marginLeft: '5px' }}>
-                                    {selectedSize || sclproduct.size}
+                                    {selectedSize}
                                 </span>
                             )}
                         </button>
@@ -254,7 +276,7 @@ const Sclproductdisplay = () => {
                                 fontWeight: '400',
                             }}
                             min='1'
-                            value={selectedQuantity || sclproduct.quantity}
+                            value={selectedQuantity}
                             onChange={(e) => handleQuantitySelect(e.target.value)}
                         />
                     </div>

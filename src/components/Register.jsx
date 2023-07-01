@@ -114,7 +114,7 @@ const Register = () => {
             })
                 .then((response) => {
                     if (response.ok) {
-                        
+
                         setfname("");
                         setlname("");
                         setemail("");
@@ -377,7 +377,7 @@ const Register = () => {
                         <button className="bg-black text-white" type="submit">
                             Register
                         </button>
-                        <p className="mt-3 text-center" style={{fontSize:'13px',color:'#978F8F'}}>
+                        <p className="mt-3 text-center" style={{ fontSize: '13px', color: '#978F8F' }}>
                             Already have an account?{" "}
                             <Link to="/Signin" className="text-black w-25">
                                 Sign in
