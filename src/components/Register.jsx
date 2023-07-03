@@ -15,6 +15,7 @@ const Register = () => {
     const [state, setstate] = useState("");
     const [gstnum, setgstnum] = useState("");
     const [errors, seterrors] = useState({});
+    const [login, setlogin] = useState();
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -92,7 +93,7 @@ const Register = () => {
 
         if (Object.keys(validationErrors).length === 0) {
             const newUser = {
-                id: Date.now(),
+                id: Math.random(),
                 fname,
                 lname,
                 email,
@@ -103,6 +104,7 @@ const Register = () => {
                 city,
                 state,
                 gstnum,
+                login
             };
 
             fetch("http://localhost:4000/Register", {
@@ -126,6 +128,7 @@ const Register = () => {
                         setcity("");
                         setstate("");
                         setgstnum("");
+                        setlogin("");
                         console.log("Registration Successful");
                     } else {
                         throw new Error("Registration failed");

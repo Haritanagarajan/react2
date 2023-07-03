@@ -653,30 +653,32 @@
   ],
   "Register": [
     {
-      "id": 1688023328551,
+      "id": 0.1951876798464638,
       "fname": "Harita",
       "lname": "N",
       "email": "30harita2002@gmail.com",
       "pword": "Harita@123",
-      "utype": "school",
+      "utype": "enterprise",
       "dname": "hari",
       "dcode": "123",
       "city": "Coimbatore",
-      "state": "Bihar",
-      "gstnum": "67890"
+      "state": "Haryana",
+      "gstnum": "678905",
+      "login": 1
     },
     {
-      "id": 1688023610995,
-      "fname": "Ranita",
+      "id": 0.7825270793669765,
+      "fname": "vasanth",
       "lname": "N",
-      "email": "30harita2003@gmail.com",
-      "pword": "Ranita@123",
-      "utype": "enterprise",
-      "dname": "rani",
-      "dcode": "123",
+      "email": "31vasanth2002@gmail.com",
+      "pword": "Vasanth@123",
+      "utype": "school",
+      "dname": "vasanth",
+      "dcode": "123456",
       "city": "Coimbatore",
-      "state": "Nagaland",
-      "gstnum": "67890"
+      "state": "Kerala",
+      "gstnum": "67890",
+      "login": 0
     }
   ],
   "Cartstorage": [
