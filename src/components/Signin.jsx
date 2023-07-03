@@ -1,100 +1,105 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useCart } from "react-use-cart";
-import setting from '../Asserts/Images/setting.png';
-import cart from '../Asserts/Images/cart.png';
-import Orderstatus from '../Asserts/Images/Orderstatus.png';
-import '../Styles/Nav.css';
-// import { useNavigate } from 'react-router-dom';
+import "../Styles/Signin.css";
+import { useNavigate } from "react-router-dom";
 
-export default function Navbar() {
-  const [login, setLogin] = useState(false);
-  const [display, setDisplay] = useState("block");
-//   const navigate = useNavigate();
-  const { totalUniqueItems } = useCart();
+const SignIn = () => {
+    const [username, setusername] = useState("");
+    const [password, setpassword] = useState("");
+    const navigate = useNavigate();
 
-//   useEffect(() => {
-//     fetch("http://localhost:4000/Register?login_like=1")
-//       .then((response) => response.json())
-//       .then((data) => {
-//         console.log(data);
-//         if (data.length > 0) {
-//           setLogin(true);
-//           setDisplay('none');
-//         }
-//       });
-//   }, []);
+    const onSubmit = (e) => {
+        e.preventDefault();
+        fetch("http://localhost:4000/Register")
+            .then((response) => response.json())
+            .then((data) => {
+                const registeruser = data.find(
+                    (user) => user.fname === username && user.pword === password
+                );
 
- 
+                if (registeruser) {
+                    console.log("Login success");
+                    const id = registeruser.id;
 
-  return (
-    <div className='navbarfull sticky-top'>
-      <Link className='titlename sm-none text' to="/Acecraft">
-        acecraft
-      </Link>
+                    fetch(`http://localhost:4000/Register/${id}`, {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            ...registeruser,
+                            login: 1,
+                        }),
+                    })
+                        .then(() => {
+                            navigate("/Acecraft");
+                        })
+                        .catch((error) => {
+                            console.error("Error:", error);
+                        });
+                } else {
+                    console.log("Login failed");
+                }
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+    };
 
-      <nav className="navbar navbar-expand-lg">
-        <div className="container-fluid">
-          <Link className="navbar-brand" to="#"></Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div className="navbar-nav text-center">
-              <Link className='nav-link' aria-current="page" to="/School">SCHOOL</Link>
-              <Link className='nav-link' to="/College">COLLEGE</Link>
-              <Link className='nav-link' to="/Enterprice">ENTERPRISE</Link>
-              <Link className='nav-link notes' to="/Notes">NOTES</Link>
-              <Link className='nav-link' id='areamask' to="/Arienmask">ARIEN MASK</Link>
+    return (
+        <div className="container" id="cont">
+            <div className="row">
+                <div className="col-12 py-5 shadow mb-5 my-custom-shadow">
+                    <h2
+                        className="ms-5 mb-3"
+                        style={{ color: "#978F8F", fontSize: "27px" }}
+                    >
+                        Login with ACECRAFT
+                    </h2>
+                    <form className="login-form" onSubmit={onSubmit}>
+                        <div className="form-group">
+                            <input
+                                className="w-100"
+                                type="text"
+                                placeholder="Username"
+                                value={username}
+                                onChange={(e) => setusername(e.target.value)}
+                            />
+                        </div>
 
-              <div className='setting'>
-                <li className='companymenuli'>
-                  <Link className="alisting">
-                    <img src={setting} width='20px' alt="settings" />
-                    <b className="caret"></b>
-                  </Link>
-                  <ul className='ullist'>
-                    <Link style={{ color: '#978F8F', textDecoration: "none" }} to="Signin">
-                      <li id="sign-in" style={{ display: display }}>Sign In &nbsp; | <i className="fa-solid fa-right-to-bracket"></i></li>
-                    </Link>
-                    <Link style={{ color: '#978F8F', textDecoration: 'none' }} to="Register">
-                      <li id="register" style={{ display: display }}>Register  &nbsp; | <i className="fa-solid fa-user-plus"></i> </li>
-                    </Link>
-                    <Link style={{ color: '#978F8F', textDecoration: 'none' }}>
-                      <li id="order-status">Order Status &nbsp;| <img src={Orderstatus} alt="orderstatus" width='20' style={{ color: 'grey' }} /></li>
-                    </Link>
-                    <Link style={{ color: '#978F8F', textDecoration: 'none' }}>
-                      <li id="contact">Contact  &nbsp; | <i className="fas fa-comments"></i></li>
-                    </Link>
-                    {/* {login && (
-                      <Link style={{ color: '#978F8F', textDecoration: 'none', }} to="">
-                        <li id="logout" >Logout  &nbsp; | <i className="fa-solid fa-right-from-bracket"></i></li>
-                      </Link>
-                    )} */}
-                  </ul>
-                </li>
-              </div>
+                        <div className="form-group ms-1 pt-3">
+                            <input
+                                className="w-100"
+                                type="password"
+                                placeholder="Password"
+                                value={password}
+                                onChange={(e) => setpassword(e.target.value)}
+                            />
+                        </div>
 
-              <div>
-                <Link to="cart">
-                  <button className="btn">
-                    <img src={cart} width='25px' alt="carts" />
-                    <span className="badge">{totalUniqueItems}</span>
-                  </button>
-                </Link>
-              </div>
+                        <div className="d-flex justify-content-center mt-4">
+                            <button className="bg-black text-white btn-size" type="submit">
+                                Login
+                            </button>
+                        </div>
+
+                        <div className="d-flex justify-content-center mt-2">
+                            <p
+                                className="mt-3 text-center"
+                                style={{ fontSize: "13px", color: "#978F8F" }}
+                            >
+                                Don't have an account?{" "}
+                                <Link to="/Register" className="text-black w-25">
+                                    Register
+                                </Link>
+
+                            </p>
+                        </div>
+                    </form>
+                </div>
             </div>
-          </div>
         </div>
-      </nav>
-    </div>
-  );
-}
+    );
+};
+
+export default SignIn;

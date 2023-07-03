@@ -653,32 +653,18 @@
   ],
   "Register": [
     {
-      "id": 0.1951876798464638,
+      "id": 0.9071416126520215,
       "fname": "Harita",
       "lname": "N",
       "email": "30harita2002@gmail.com",
       "pword": "Harita@123",
       "utype": "enterprise",
       "dname": "hari",
-      "dcode": "123",
-      "city": "Coimbatore",
-      "state": "Haryana",
-      "gstnum": "678905",
-      "login": 1
-    },
-    {
-      "id": 0.7825270793669765,
-      "fname": "vasanth",
-      "lname": "N",
-      "email": "31vasanth2002@gmail.com",
-      "pword": "Vasanth@123",
-      "utype": "school",
-      "dname": "vasanth",
       "dcode": "123456",
       "city": "Coimbatore",
-      "state": "Kerala",
-      "gstnum": "67890",
-      "login": 0
+      "state": "Jharkhand",
+      "gstnum": "678905",
+      "login": 1
     }
   ],
   "Cartstorage": [
@@ -699,6 +685,15 @@
       "totalprice": 600,
       "Quantity": 1,
       "Size": ""
+    },
+    {
+      "id": 2,
+      "image": "https://cdn.storehippo.com/s/5997cc7c4d6e8ffa20e50aae/601d6e74cbfb666ae1145869/webp/elementary-school-480x480.jpg",
+      "title": "CIS Royal Day Wear (Grade 1-5)",
+      "price": 900,
+      "totalprice": 900,
+      "Quantity": "5",
+      "Size": "26"
     }
   ]
 }

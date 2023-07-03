@@ -1,21 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import setting from '../Asserts/Images/setting.png';
 import cart from '../Asserts/Images/cart.png';
 import { Link, useNavigate } from "react-router-dom";
 import '../Styles/Nav.css';
 import Orderstatus from '../Asserts/Images/Orderstatus.png'
 import { useCart } from "react-use-cart";
-import { useState, useEffect } from 'react';
-
 
 export default function Navbar() {
     const [login, setLogin] = useState(false);
     const [display, setDisplay] = useState("block");
     const navigate = useNavigate();
+    const { totalUniqueItems } = useCart();
 
-    const {
-        totalUniqueItems
-    } = useCart()
 
     useEffect(() => {
         fetch("http://localhost:4000/Register?login_like=1")
@@ -29,19 +25,53 @@ export default function Navbar() {
             });
     }, []);
 
-    useEffect(() => {
-        const logout = () => {
-            navigate('/Signin');
-            setLogin('0');
-        }
-    }, [])
+    // const handleLogout = () => {
+    //     fetch(`http://localhost:4000/Register?login_like=1`, {
+    //         method: 'PUT',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify({
+    //             login: 0,
+    //         }),
+    //     })
+    //         .then(() => {
+    //             navigate('/Signin');
+    //             setLogin(false);
+    //         })
+    //         .catch((error) => {
+    //             console.error('Error:', error);
+    //         });
+    // };
 
+    const handleLogout = () => {
+        fetch("http://localhost:4000/Register")
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+            }
+            );
+        fetch(`http://localhost:4000/Register?login_like=1`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                setlogin: 0,
+            }),
+        })
+            .then(() => {
+                navigate("/Signin");
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+
+    }
 
     return (
         <div className='navbarfull sticky-top' >
-
             <Link className='titlename  sm-none text' to="/Acecraft">acecraft</Link>
-
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="#"></Link>
@@ -55,7 +85,6 @@ export default function Navbar() {
                             <Link className='nav-link' to="/Enterprice">ENTERPRISE</Link>
                             <Link className='nav-link notes' to="/Notes">NOTES</Link>
                             <Link className='nav-link' id='areamask' to="/Arienmask">ARIEN MASK</Link>
-
                             <div className='setting'>
                                 <li className='companymenuli'><Link class="alisting"><img src={setting} width='20px' alt="settings" /><b class="caret"></b></Link>
                                     <ul className='ullist'>
@@ -64,14 +93,13 @@ export default function Navbar() {
                                         <Link style={{ color: '#978F8F', textDecoration: 'none' }}><li id="order-status">Order Status &nbsp;| <img src={Orderstatus} alt="orderstatus" width='20' style={{ color: 'grey' }} /></li></Link>
                                         <Link style={{ color: '#978F8F', textDecoration: 'none' }}><li id="contact">Contact  &nbsp; | <i class="fas fa-comments"></i></li></Link>
                                         {login && (
-                                            <Link style={{ color: '#978F8F', textDecoration: 'none', }} to="/Logout">
-                                                <li id="logout" onclick={logout}>Logout  &nbsp; | <i class="fa-solid fa-right-from-bracket"></i></li>
+                                            <Link style={{ color: '#978F8F', textDecoration: 'none', }} to="">
+                                                <li id="logout" onClick={handleLogout}>Logout  &nbsp; | <i class="fa-solid fa-right-from-bracket"></i></li>
                                             </Link>
                                         )}
                                     </ul>
                                 </li>
                             </div>
-
                             <div>
                                 <Link to="cart"><button class="btn"><img src={cart} width='25px' alt="carts" /><span class="badge">{totalUniqueItems}</span></button></Link>
                             </div>
@@ -79,9 +107,6 @@ export default function Navbar() {
                     </div>
                 </div>
             </nav >
-
         </div>
     );
-
 }
-
