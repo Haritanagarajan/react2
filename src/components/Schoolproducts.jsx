@@ -54,7 +54,7 @@ const Schoolproducts = () => {
     return (
         <>
             <Imgg />
-            <div className="container mb-3">
+            <div className="container sclcontainer mb-3">
                 <div className="row">
                     <div className="col">
                         <button

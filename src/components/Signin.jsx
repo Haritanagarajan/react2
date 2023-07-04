@@ -76,8 +76,8 @@ const SignIn = () => {
                     </h2>
                     <form className="login-form" onSubmit={onSubmit}>
                         <div className="form-group">
-                            <input
-                                className="w-100"
+                            <input 
+                                className="w-100 signininput"
                                 type="text"
                                 placeholder="Username"
                                 value={username}
@@ -87,7 +87,7 @@ const SignIn = () => {
 
                         <div className="form-group ms-1 pt-3">
                             <input
-                                className="w-100"
+                                className="w-100  signininput"
                                 type="password"
                                 placeholder="Password"
                                 value={password}
