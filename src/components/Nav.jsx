@@ -12,7 +12,6 @@ export default function Navbar() {
     const navigate = useNavigate();
     const { totalUniqueItems } = useCart();
 
-
     useEffect(() => {
         fetch("http://localhost:4000/Register?login_like=1")
             .then((response) => response.json())
@@ -25,49 +24,40 @@ export default function Navbar() {
             });
     }, []);
 
-    // const handleLogout = () => {
-    //     fetch(`http://localhost:4000/Register?login_like=1`, {
-    //         method: 'PUT',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify({
-    //             login: 0,
-    //         }),
-    //     })
-    //         .then(() => {
-    //             navigate('/Signin');
-    //             setLogin(false);
-    //         })
-    //         .catch((error) => {
-    //             console.error('Error:', error);
-    //         });
-    // };
 
-    const handleLogout = () => {
-        fetch("http://localhost:4000/Register")
+
+    const handleLogout = (e) => {
+        e.preventDefault();
+        fetch("http://localhost:4000/Register?login_like=1")
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
-            }
-            );
-        fetch(`http://localhost:4000/Register?login_like=1`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                setlogin: 0,
-            }),
-        })
-            .then(() => {
-                navigate("/Signin");
+                if (data.length > 0) {
+                    const id = data[0].id;
+
+                    fetch(`http://localhost:4000/Register/${id}`, {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            ...data[0],
+                            login: 0,
+                        }),
+                    })
+                        .then(() => {
+                            navigate("/Signin");
+                        })
+                        .catch((error) => {
+                            console.error("Error:", error);
+                        });
+                }
             })
             .catch((error) => {
                 console.error("Error:", error);
             });
+    };
 
-    }
 
     return (
         <div className='navbarfull sticky-top' >

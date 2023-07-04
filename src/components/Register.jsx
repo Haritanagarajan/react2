@@ -253,8 +253,8 @@ const Register = () => {
                         </div>
 
                         <div>
-                            <label className="ms-5">
-                                <input
+                            <label className="text-center ms-5 ps-5 ">
+                                <input style={{ paddingTop: '10px' }}
                                     type="radio"
                                     value="school"
                                     checked={utype === "school"}
@@ -262,7 +262,7 @@ const Register = () => {
                                 />
                                 School
                             </label>
-                            <label className="ms-5">
+                            <label className="text-center me-5 pe-5" style={{ display: 'horizontal', marginTop: '-52px' }}>
                                 <input
                                     type="radio"
                                     value="enterprise"

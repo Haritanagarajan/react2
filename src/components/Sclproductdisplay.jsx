@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import '../Styles/Sclproductdisplay.css';
 import Sizechart from '../Asserts/Images/Sizechart.png';
 import { useCart, CartProvider } from "react-use-cart";
-// import Carousel from 'react-bootstrap/Carousel';
+import Carousel from 'react-bootstrap/Carousel';
 
 
 
@@ -15,6 +15,14 @@ const Sclproductdisplay = () => {
     const [selectedSize, setSelectedSize] = useState('');
     const [selectedQuantity, setSelectedQuantity] = useState(1);
     const [amount, setAmount] = useState('0');
+    const [relatedProducts, setRelatedProducts] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:4000/sclproducts')
+            .then((response) => response.json())
+            .then((data) => setRelatedProducts(data));
+    }, []);
+
 
 
     useEffect(() => {
@@ -24,7 +32,6 @@ const Sclproductdisplay = () => {
     }, [id]);
 
     useEffect(() => {
-        // Update the amount based on the selected size
         if (selectedSize && sclproduct) {
             const newAmount = Number(selectedSize) + Number(sclproduct.dprice) * Number(selectedQuantity);
             setAmount(newAmount);
@@ -92,9 +99,9 @@ const Sclproductdisplay = () => {
             image: sclproduct.sclproductimg,
             title: sclproduct.prodname,
             price: sclproduct.dprice,
-            totalprice:sclproduct.dprice,
-            Quantity:selectedQuantity,
-            Size:selectedSize
+            totalprice: sclproduct.dprice,
+            Quantity: selectedQuantity,
+            Size: selectedSize
 
         })
     })
@@ -107,6 +114,11 @@ const Sclproductdisplay = () => {
             console.error('Error editing item:', error);
 
         });
+
+
+
+
+        
 
     return (
         <div style={{ paddingBottom: '500px' }} className='container-fluid'>
@@ -297,8 +309,24 @@ const Sclproductdisplay = () => {
                     <button type='button' className='btn mt-5' style={{ backgroundColor: 'black', color: 'white', fontSize: '15px' }}>
                         BUY NOW
                     </button>
-
                 </div>
+                <Description />
+
+                <Carousel>
+                    {relatedProducts.map((scl) => (
+                        <Carousel.Item key={scl.id}>
+                            <div className='row d-flex justify-content-center '>
+                                <div className="col-lg-2 col-sm-2 col-md-2 col-xl-2">
+                                    <img
+                                        className="col-lg-12 col-sm-12 col-md-12 col-xl-12"
+                                        src={scl.sclproductimg}
+                                        alt="Carousel item"
+                                    />
+                                </div>
+                            </div>
+                        </Carousel.Item>
+                    ))}
+                </Carousel>
             </div>
 
 
@@ -337,8 +365,6 @@ const Sclproductdisplay = () => {
                     </div>
                 </div>
             </div>
-            <Description />
-
         </div>
 
     );
@@ -353,7 +379,6 @@ function Description() {
             <h5 style={{ color: 'black', fontWeight: '600' }}> NO RETURNS & NO EXCHANGE.</h5>
             <h6 style={{ color: 'black', fontWeight: '400' }}> Made from Poly-cotton. Henley neckline. Short sleeves.</h6>
             <h6 style={{ color: 'black', fontWeight: '500' }} className='mt-5'>Related products</h6>
-
         </div>
     )
 }

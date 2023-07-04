@@ -1,15 +1,29 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../Styles/Signin.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import { Auth } from "./Auth";
 
 const SignIn = () => {
     const [username, setusername] = useState("");
     const [password, setpassword] = useState("");
     const navigate = useNavigate();
+    const location = useLocation();
 
-    const onSubmit = (e) => {
-        e.preventDefault();
+
+    //when login btn is clicked path from and location is displayed and when btn is clicked signin  auth component login func is implemented
+    let { from } = location.state || { from: { pathname: "/" } };
+    console.log(from);
+
+    let login = () => {
+        Auth.login(() => {
+            //navigate to where we gave privateauth in route
+            navigate(from);
+        })
+    }
+
+    const onSubmit = (event) => {
+        event.preventDefault();
         fetch("http://localhost:4000/Register")
             .then((response) => response.json())
             .then((data) => {
@@ -39,6 +53,7 @@ const SignIn = () => {
                         });
                 } else {
                     console.log("Login failed");
+
                 }
             })
             .catch((error) => {
@@ -48,6 +63,9 @@ const SignIn = () => {
 
     return (
         <div className="container" id="cont">
+            <p className="text-center" style={{ color: "#0d7a00", fontSize: 30, fontWeight: '600', fontStyle: 'italic', fontFamily: 'monospace' }}>
+                Oops Login ! 	&#128517;
+            </p>
             <div className="row">
                 <div className="col-12 py-5 shadow mb-5 my-custom-shadow">
                     <h2
@@ -78,7 +96,7 @@ const SignIn = () => {
                         </div>
 
                         <div className="d-flex justify-content-center mt-4">
-                            <button className="bg-black text-white btn-size" type="submit">
+                            <button className="bg-black text-white btn-size" type="submit" onClick={login}>
                                 Login
                             </button>
                         </div>

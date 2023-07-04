@@ -72,9 +72,11 @@ const Schoolproducts = () => {
                                     fontWeight: "500",
                                 }}
                             >
-                                -44 items
+                                -{sclproduct.length} items
                             </span>
                         </button>
+
+
                     </div>
 
                     <div className="col-md-3">

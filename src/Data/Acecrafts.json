@@ -211,17 +211,6 @@
       "discount": "24% OFF"
     },
     {
-      "id": 5,
-      "sclproductimg": "https://cdn.storehippo.com/s/5997cc7c4d6e8ffa20e50aae/ms.products/5aa0f5c6f04705ab2ca345c6/images/5aa0f5c6f04705ab2ca345c7/5aa0f5d0f04705ab2ca345f9/webp/5aa0f5d0f04705ab2ca345f9-480x480.jpg",
-      "prodname": "NHG Shirt [Boys, Grade 1-10]",
-      "prodcode": " NHISDWT18",
-      "brand": " ACECRAFT",
-      "soldby": "Alchemy",
-      "dprice": 500,
-      "oprice": " ₹450",
-      "discount": "24% OFF"
-    },
-    {
       "id": 6,
       "sclproductimg": "https://cdn.storehippo.com/s/5997cc7c4d6e8ffa20e50aae/627b614a77743f91a456432d/webp/front-view-nhg-shirt-girls-grade-11-12--480x480.jpg",
       "prodname": "NHG County Shirt [Girls, Grade 11-12]",
@@ -664,7 +653,21 @@
       "city": "Coimbatore",
       "state": "Jharkhand",
       "gstnum": "678905",
-      "login": 1
+      "login": 0
+    },
+    {
+      "id": 0.051223890358377266,
+      "fname": "vasanth",
+      "lname": "N",
+      "email": "31vasanth2002@gmail.com",
+      "pword": "Vasanth@123",
+      "utype": "school",
+      "dname": "vasanth",
+      "dcode": "12345",
+      "city": "Coimbatore",
+      "state": "Karnataka",
+      "gstnum": "678905",
+      "login": 0
     }
   ],
   "Cartstorage": [
@@ -674,8 +677,8 @@
       "title": "NHIS Day Wear Polo [Boys & Girls, Nursery-Grade 5]",
       "price": 597,
       "totalprice": 597,
-      "Quantity": "7",
-      "Size": "26"
+      "Quantity": 1,
+      "Size": ""
     },
     {
       "id": 8,
@@ -692,8 +695,26 @@
       "title": "CIS Royal Day Wear (Grade 1-5)",
       "price": 900,
       "totalprice": 900,
-      "Quantity": "5",
-      "Size": "26"
+      "Quantity": "6",
+      "Size": "20"
+    },
+    {
+      "id": 5,
+      "image": "https://cdn.storehippo.com/s/5997cc7c4d6e8ffa20e50aae/ms.products/5aa0f5c6f04705ab2ca345c6/images/5aa0f5c6f04705ab2ca345c7/5aa0f5d0f04705ab2ca345f9/webp/5aa0f5d0f04705ab2ca345f9-480x480.jpg",
+      "title": "NHG Shirt [Boys, Grade 1-10]",
+      "price": 500,
+      "totalprice": 500,
+      "Quantity": "4",
+      "Size": "20"
+    },
+    {
+      "id": 7,
+      "image": "https://cdn.storehippo.com/s/5997cc7c4d6e8ffa20e50aae/601d7044a72cc46b41ac7ca4/webp/hi-school-480x480.jpg",
+      "title": "CIS White Day Wear (Grade 9 & 10)",
+      "price": 600,
+      "totalprice": 600,
+      "Quantity": "10",
+      "Size": "20"
     }
   ]
 }

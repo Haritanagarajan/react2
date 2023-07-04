@@ -15,7 +15,8 @@ import Register from './components/Register';
 import Signin from './components/Signin';
 import Cart from './components/Cart';
 import { CartProvider } from 'react-use-cart';
-
+import Notesdisplay from './components/Notesdisplay';
+import PrivateAuth from './components/PrivateAuth';
 
 function App() {
   return (
@@ -31,11 +32,13 @@ function App() {
           <Route exact path='Notes' element={<Notes />} />
           <Route exact path='Arienmask' element={<Arienmask />} />
           <Route exact path='/Schoolproducts/:sclname' element={<Schoolproducts />} />
-          <Route exact path='/Sclproductdisplay/:id' element={<Sclproductdisplay />} />
+          <Route exact path='/Sclproductdisplay/:id' element={<PrivateAuth><Sclproductdisplay /></PrivateAuth>} />
           <Route exact path='*' element={<Errorcomponent />} />
           <Route exact path="Register" element={<Register />}></Route>
           <Route exact path="Signin" element={<Signin />}></Route>
-          <Route exact path="cart" element={<Cart />} />
+          <Route exact path="cart" element={<PrivateAuth><Cart /></PrivateAuth>} />
+          <Route exact path='/Notesdisplay/:id' element={<Notesdisplay />} />
+
         </Routes>
       </CartProvider>
       <Footer />

@@ -26,6 +26,22 @@ const Cart = () => {
     };
 
 
+
+    fetch('http://localhost:4000/sclproducts', {
+        method: 'DELETE',
+    })
+        .then(response => {
+            if (response.ok) {
+                console.log('Deletion successful');
+            } else {
+                console.error('Deletion failed');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+
+
     if (isEmpty) return (
         <>
             <h1 className="ms-5" style={{ marginTop: 100 }}>Oops! &#128533; your cart is empty</h1>;
@@ -50,28 +66,8 @@ const Cart = () => {
                                         <img src={item.image} style={{ height: "25rem" }} alt="" onClick={backtoschool} />
                                     </td>
                                     <td style={{ fontSize: '20px', fontWeight: '500', border: 'none' }}>{item.title}<h6 className='ms-n5' style={{ fontWeight: '600', fontSize: '13px' }}>Size:{item.Size}</h6></td>
-
-                                    <button
-                                        style={{ fontWeight: 'bold', fontSize: '20px', border: 'none' }}
-                                        className=" ms-5" type='button'
-                                        onClick={() =>
-                                            updateItemQuantity(item.id, item.quantity - 1)
-                                        }
-                                    >
-                                        –
-                                    </button>
-                                    <b>{item.quantity}</b>
-                                    <button
-                                        style={{ fontWeight: 'bold', fontSize: '20px', border: 'none' }}
-                                        className="" type='button'
-                                        onClick={() =>
-                                            updateItemQuantity(item.id, item.quantity + 1)
-                                        }
-                                    >
-                                        +
-                                    </button>
+                                    <b>{item.Quantity}</b>
                                     <td style={{ fontWeight: '600', fontSize: '20px', border: 'none' }}>₹{totalprice(item)}</td>
-
                                     <button
                                         className="btn mt-3 ms-n3" style={{ color: 'red', fontSize: '11px', fontWeight: '600' }}
                                         onClick={() => removeItem(item.id)}
