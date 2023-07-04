@@ -79,9 +79,9 @@ const Schoolproducts = () => {
 
                     </div>
 
-                    <div className="col-md-3">
+                    <div className="col-md-3" >
                         <div className="dropdown">
-                            <select style={{ fontSize: '13px', boxShadow: '10px 10px 10px 2px grey', border: 'none' }}
+                            <select style={{ fontSize: '13px', boxShadow: '10px 10px 10px 2px grey', border: 'none', fontWeight: '600' }}
                                 className="form-control"
                                 onChange={handleSortChange}
                                 value={sortType}
