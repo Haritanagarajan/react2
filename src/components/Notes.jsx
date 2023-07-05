@@ -7,7 +7,7 @@ const Notes = () => {
 
 
     const fetchData = () => {
-        fetch('http://localhost:4000/Notes')
+        fetch('https://acecraftjsondeploy.vercel.app/Notes')
             .then((response) => response.json())
             .then((data) => {
                 setnotesindex(data);

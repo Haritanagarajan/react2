@@ -12,30 +12,28 @@ export default function Navbar() {
     const navigate = useNavigate();
     const { totalUniqueItems } = useCart();
 
-    useEffect(() => {
-        fetch("http://localhost:4000/Register?login_like=1")
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data);
-                if (data.length > 0) {
-                    setLogin(true);
-                    setDisplay('none');
-                }
-            });
-    }, []);
+    fetch("https://acecraftjsondeploy.vercel.app/Register?login_like=1")
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+            if (data.length > 0) {
+                setLogin(true);
+                setDisplay('none');
+            }
+        });
 
 
 
-    const handleLogout = (e) => {
-        e.preventDefault();
-        fetch("http://localhost:4000/Register?login_like=1")
+    const handleLogout = () => {
+        setLogin(false);
+        fetch("https://acecraftjsondeploy.vercel.app/Register?login_like=1")
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
                 if (data.length > 0) {
                     const id = data[0].id;
 
-                    fetch(`http://localhost:4000/Register/${id}`, {
+                    fetch(`https://acecraftjsondeploy.vercel.app/Register/${id}`, {
                         method: "PUT",
                         headers: {
                             "Content-Type": "application/json",
@@ -61,7 +59,7 @@ export default function Navbar() {
 
     return (
         <div className='navbarfull sticky-top' >
-            <Link className='titlename  sm-none text' to="/Acecraft">acecraft</Link>
+            <Link className='titlename  sm-none text' to="/">acecraft</Link>
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="#"></Link>

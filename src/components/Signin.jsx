@@ -11,31 +11,26 @@ const SignIn = () => {
     const location = useLocation();
 
 
-    //when login btn is clicked path from and location is displayed and when btn is clicked signin  auth component login func is implemented
+    // when login btn is clicked path from and location is displayed and when btn is clicked signin  auth component login func is implemented
     let { from } = location.state || { from: { pathname: "/" } };
     console.log(from);
 
-    let login = () => {
-        Auth.login(() => {
-            //navigate to where we gave privateauth in route
-            navigate(from);
-        })
-    }
 
     const onSubmit = (event) => {
         event.preventDefault();
-        fetch("http://localhost:4000/Register")
+        fetch("https://acecraftjsondeploy.vercel.app/Register")
             .then((response) => response.json())
             .then((data) => {
                 const registeruser = data.find(
                     (user) => user.fname === username && user.pword === password
                 );
+                console.log(registeruser);
 
                 if (registeruser) {
                     console.log("Login success");
                     const id = registeruser.id;
 
-                    fetch(`http://localhost:4000/Register/${id}`, {
+                    fetch(`https://acecraftjsondeploy.vercel.app/Register/${id}`, {
                         method: "PUT",
                         headers: {
                             "Content-Type": "application/json",
@@ -46,14 +41,16 @@ const SignIn = () => {
                         }),
                     })
                         .then(() => {
-                            navigate("/Acecraft");
+                            // Update the login state
+                            Auth.login(() => {
+                                navigate("/Cart");
+                            });
                         })
                         .catch((error) => {
                             console.error("Error:", error);
                         });
                 } else {
                     console.log("Login failed");
-
                 }
             })
             .catch((error) => {
@@ -76,7 +73,7 @@ const SignIn = () => {
                     </h2>
                     <form className="login-form" onSubmit={onSubmit}>
                         <div className="form-group">
-                            <input 
+                            <input
                                 className="w-100 signininput"
                                 type="text"
                                 placeholder="Username"
@@ -96,7 +93,7 @@ const SignIn = () => {
                         </div>
 
                         <div className="d-flex justify-content-center mt-4">
-                            <button className="bg-black text-white btn-size" type="submit" onClick={login}>
+                            <button className="bg-black text-white btn-size" type="submit">
                                 Login
                             </button>
                         </div>

@@ -24,7 +24,7 @@ function App() {
       <CartProvider>
         <Navbar />
         <Routes>
-          <Route exact path='Acecraft' element={<Acecraft />} />
+          <Route exact path='/' element={<Acecraft />} />
           <Route exact path='School' element={<School />} />
           <Route exact path='College' element={<College />} />
           <Route exact path='Enterprice' element={<Enterprice />} />
@@ -32,7 +32,7 @@ function App() {
           <Route exact path='Notes' element={<Notes />} />
           <Route exact path='Arienmask' element={<Arienmask />} />
           <Route exact path='/Schoolproducts/:sclname' element={<Schoolproducts />} />
-          <Route exact path='/Sclproductdisplay/:id' element={<PrivateAuth><Sclproductdisplay /></PrivateAuth>} />
+          <Route exact path='/Sclproductdisplay/:id' element={<Sclproductdisplay />} />
           <Route exact path='*' element={<Errorcomponent />} />
           <Route exact path="Register" element={<Register />}></Route>
           <Route exact path="Signin" element={<Signin />}></Route>

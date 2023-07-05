@@ -25,7 +25,7 @@ function Honda() {
 
     const [mensindex, setmensindex] = useState([]);
     const fetchData = () => {
-        fetch('http://localhost:4000/mens')
+        fetch('https://acecraftjsondeploy.vercel.app/mens')
             .then((response) => response.json())
             .then((data) => {
                 setmensindex(data);
@@ -82,7 +82,7 @@ function Honda() {
 function Steps() {
     const [stepsindex, setstepsindex] = useState([]);
     const fetchData = () => {
-        fetch('http://localhost:4000/steps')
+        fetch('https://acecraftjsondeploy.vercel.app/steps')
             .then((response) => response.json())
             .then((data) => {
                 setstepsindex(data);
@@ -140,7 +140,7 @@ function Steps() {
 function Fourimgblock() {
     const [fourimgindex, setfourimgindex] = useState([]);
     const fetchData = () => {
-        fetch('http://localhost:4000/fourimgblock')
+        fetch('https://acecraftjsondeploy.vercel.app/fourimgblock')
             .then((response) => response.json())
             .then((data) => {
                 setfourimgindex(data);

@@ -20,7 +20,7 @@ function Logo() {
     const [sclLogo, setsclLogo] = useState([]);
 
     const fetchData = () => {
-        fetch('http://localhost:4000/school')
+        fetch('https://acecraftjsondeploy.vercel.app/school')
             .then((response) => response.json())
             .then((data) => {
                 setsclLogo(data);

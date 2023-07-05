@@ -10,7 +10,6 @@ const Cart = () => {
     const {
         removeItem,
         isEmpty,
-        updateItemQuantity,
         emptyCart,
         cartTotal
     } = useCart();
@@ -27,20 +26,7 @@ const Cart = () => {
 
 
 
-    fetch('http://localhost:4000/sclproducts', {
-        method: 'DELETE',
-    })
-        .then(response => {
-            if (response.ok) {
-                console.log('Deletion successful');
-            } else {
-                console.error('Deletion failed');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-
+    
 
     if (isEmpty) return (
         <>

@@ -107,7 +107,7 @@ const Register = () => {
                 login
             };
 
-            fetch("http://localhost:4000/Register", {
+            fetch("https://acecraftjsondeploy.vercel.app/Register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
