@@ -1,7 +1,7 @@
 import React from 'react';
 import { useCart } from 'react-use-cart';
 import { useNavigate } from 'react-router-dom';
-
+import Swal from 'sweetalert2';
 
 const Cart = () => {
     const { items } = useCart();
@@ -10,11 +10,71 @@ const Cart = () => {
     const {
         removeItem,
         isEmpty,
-        emptyCart,
         cartTotal
     } = useCart();
 
 
+    let paymentHandler = "";
+
+    function makePayment() {
+        invokeStripe();
+        paymentHandler = window.StripeCheckout.configure({
+            key: "pk_test_51Kb7TuSGj6LZeNumr4WWZQlyT0VAdXUwQ0zPIJAmGbnt9MAwXkJ5aIfQOZsCPraDu1L2BxAyRb8jLSF5tB6fL8mO00Yw0HiRYf",
+            locale: "auto",
+            token: function (stripeToken) {
+                console.log(stripeToken);
+                //alert('Stripe token generated!');
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                });
+
+                Toast.fire({
+                    icon: "success",
+                    title: "Order Placed Successfully",
+                });
+            },
+        });
+        paymentHandler.open({
+            name: "Course",
+            description: "Order Details",
+            //amount: amount,
+        });
+    }
+
+    function invokeStripe() {
+        if (!window.document.getElementById("stripe-script")) {
+            const script = window.document.createElement("script");
+            script.id = "stripe-script";
+            script.type = "text/javascript";
+            script.src = "https://checkout.stripe.com/checkout.js";
+            script.onClick = () => {
+                paymentHandler = window.StripeCheckout.configure({
+                    key: "pk_test_51NQPO0SDCKNqNo6Fp5eD7aGOywAMkmSvP08MDLV63HLgiBgEybJLBzhwhPMkxPnfiEtBSWwlxE0WESuFhTIdad7800rQJ5erID",
+                    locale: "auto",
+                    token: function (stripeToken) {
+                        console.log(stripeToken);
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: "top",
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true,
+                        });
+
+                        Toast.fire({
+                            icon: "error",
+                            title: "Error in generating Stripe Payment Gateway",
+                        });
+                    },
+                });
+            };
+            window.document.body.appendChild(script);
+        }
+    }
 
     const backtoschool = () => {
         navigate("/Schoolproducts/:sclname");
@@ -26,7 +86,7 @@ const Cart = () => {
 
 
 
-    
+
 
     if (isEmpty) return (
         <>
@@ -80,11 +140,10 @@ const Cart = () => {
 
             <div className="col offset-8">
 
-                <button className="btn mt-5 mb-5" onClick={() => emptyCart()} style={{ color: 'white', backgroundColor: 'black', fontSize: '14px' }}>
-                    Clear Cart
-                </button>
+                <button className="btn mt-5 mb-5" onClick={backtoschool} style={{ color: 'white', backgroundColor: 'black', fontSize: '14px' }}>
+                    Continue Shopping                </button>
 
-                <button className="btn mt-5 mb-5" onClick={backtoschool} style={{ color: 'white', backgroundColor: 'black', fontSize: '14px' }}>Continue Shopping</button>
+                <button className="btn mt-5 mb-5" onClick={makePayment} style={{ color: 'white', backgroundColor: 'black', fontSize: '14px' }}>Pay Now</button>
             </div>
         </div>
     );
