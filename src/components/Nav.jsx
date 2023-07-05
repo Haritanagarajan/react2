@@ -6,11 +6,16 @@ import '../Styles/Nav.css';
 import Orderstatus from '../Asserts/Images/Orderstatus.png'
 import { useCart } from "react-use-cart";
 
+//navbar component
+
 export default function Navbar() {
     const [login, setLogin] = useState(false);
     const [display, setDisplay] = useState("block");
     const navigate = useNavigate();
     const { totalUniqueItems } = useCart();
+
+    //get(read) the details like id is:1
+    //login is true logout is displayed in navbar
 
     fetch("https://acecraftjsondeploy.vercel.app/Register?login_like=1")
         .then((response) => response.json())
@@ -23,6 +28,8 @@ export default function Navbar() {
         });
 
 
+    //invoked form logout is clicked
+    //checks if any id is:1 and edit the login as 0 ehen logout is clicked and navigate to signin page 
 
     const handleLogout = () => {
         setLogin(false);
@@ -32,7 +39,6 @@ export default function Navbar() {
                 console.log(data);
                 if (data.length > 0) {
                     const id = data[0].id;
-
                     fetch(`https://acecraftjsondeploy.vercel.app/Register/${id}`, {
                         method: "PUT",
                         headers: {
@@ -80,6 +86,9 @@ export default function Navbar() {
                                         <Link style={{ color: '#978F8F', textDecoration: 'none' }} to="Register"><li id="register" style={{ display: display }}>Register  &nbsp; | <i class="fa-solid fa-user-plus"></i> </li></Link>
                                         <Link style={{ color: '#978F8F', textDecoration: 'none' }}><li id="order-status">Order Status &nbsp;| <img src={Orderstatus} alt="orderstatus" width='20' style={{ color: 'grey' }} /></li></Link>
                                         <Link style={{ color: '#978F8F', textDecoration: 'none' }}><li id="contact">Contact  &nbsp; | <i class="fas fa-comments"></i></li></Link>
+
+                                        {/* displayed only login becomes true */}
+
                                         {login && (
                                             <Link style={{ color: '#978F8F', textDecoration: 'none', }} to="">
                                                 <li id="logout" onClick={handleLogout}>Logout  &nbsp; | <i class="fa-solid fa-right-from-bracket"></i></li>

@@ -16,6 +16,9 @@ const SignIn = () => {
     console.log(from);
 
 
+    //invoked when form is submitted if the user is correct the their login status changes to 1
+    //authendication is prevented when cart is routed logic is impleneted and final it navigates to signin component
+
     const onSubmit = (event) => {
         event.preventDefault();
         fetch("https://acecraftjsondeploy.vercel.app/Register")
@@ -25,11 +28,9 @@ const SignIn = () => {
                     (user) => user.fname === username && user.pword === password
                 );
                 console.log(registeruser);
-
                 if (registeruser) {
                     console.log("Login success");
                     const id = registeruser.id;
-
                     fetch(`https://acecraftjsondeploy.vercel.app/Register/${id}`, {
                         method: "PUT",
                         headers: {
@@ -57,6 +58,8 @@ const SignIn = () => {
                 console.error("Error:", error);
             });
     };
+
+    //signin form
 
     return (
         <div className="container" id="cont">

@@ -6,6 +6,7 @@ import { useCart, CartProvider } from "react-use-cart";
 import Carousel from 'react-bootstrap/Carousel';
 
 
+//displays the each uniform products specs when its id is triggered using useparams 
 
 const Sclproductdisplay = () => {
     const { addItem } = useCart();
@@ -115,10 +116,6 @@ const Sclproductdisplay = () => {
 
         });
 
-
-
-
-        
 
     return (
         <div style={{ paddingBottom: '500px' }} className='container-fluid'>
@@ -299,6 +296,7 @@ const Sclproductdisplay = () => {
                         </label>
                     </div>
 
+                    {/* addtocard btn when invked display the details of the products */}
                     <CartProvider>
                         <button type='button' data-bs-toggle="modal" onClick={handleAddToCart}
                             data-bs-target="#example2Modal" className='btn mt-5 ms-n2' style={{ backgroundColor: 'black', color: 'white', fontSize: '15px' }}>
@@ -311,6 +309,8 @@ const Sclproductdisplay = () => {
                     </button>
                 </div>
                 <Description />
+
+                {/* carousel fetched from json */}
 
                 <Carousel>
                     {relatedProducts.map((scl) => (
@@ -371,6 +371,7 @@ const Sclproductdisplay = () => {
 };
 
 
+//nested component
 
 function Description() {
     return (

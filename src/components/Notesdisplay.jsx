@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../Styles/Notesdisplay.css';
 
+//notesdisplay component
 
 const Notesdisplay = () => {
     const { id } = useParams();
@@ -22,6 +23,9 @@ const Notesdisplay = () => {
     const handleGoBack = () => {
         navigate('/Notes');
     };
+
+    //accessing details from notes and displaying the details while navigating from notes to notes display with respective index
+    //using useparams concept
 
     return (
         <>
@@ -49,7 +53,11 @@ const Notesdisplay = () => {
                     <h6 className='tips mt-4'>Conclusion</h6>
                     <h6 className='noteshead mt-3'>For both men and women, getting your accessories right is an integral part of nailing the formal look. However, unless the base is <br /> right, the impact you create won’t be an effective one - start by finding customised workwear that complements your frame to a tee <br />at Acecraft! </h6>
                 </div>
+
+                {/* nested componed holds form details */}
+
                 <Commentbox />
+
             </div>
         </>
 
@@ -58,16 +66,14 @@ const Notesdisplay = () => {
 }
 
 
+//nested component
 
 const Commentbox = () => {
-
     const [count, setcount] = useState(0);
-
     const handlesubmit = (e) => {
         e.preventDefault();
         setcount((count) => count + 1);
     }
-
     return (
         <>
             <h2 className='comments ms-5 ps-5 mt-5 pt-5'>{count} &nbsp; Comment</h2>

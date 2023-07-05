@@ -1,3 +1,5 @@
+//Authendication for specific components
+
 export const Auth = {
     //initially its is false
     isAuthenticated: false,

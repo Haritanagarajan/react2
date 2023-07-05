@@ -4,6 +4,7 @@ import '../Styles/Schoolproducts.css';
 import Pimgback from '../Asserts/Images/Pimgback.jpg';
 
 
+//sclproducts component displays the each scl products uniforms fetched from api
 
 const Schoolproducts = () => {
     const [sclproduct, setSclproduct] = useState([]);
@@ -20,10 +21,13 @@ const Schoolproducts = () => {
             });
     }, []);
 
+    //sorting implementation 
     const handleSortChange = (e) => {
         setSortType(e.target.value);
         sortArray(e.target.value);
     };
+
+    //soted logic using case
 
     const sortArray = (type) => {
         const sortedArray = [...sclproduct];
@@ -75,8 +79,6 @@ const Schoolproducts = () => {
                                 -{sclproduct.length} items
                             </span>
                         </button>
-
-
                     </div>
 
                     <div className="col-md-3" >
@@ -137,6 +139,8 @@ const Schoolproducts = () => {
     );
 };
 
+//nested component
+
 function Imgg() {
     return (
         <div>
@@ -145,6 +149,8 @@ function Imgg() {
         </div>
     );
 }
+
+//nested component
 
 function Quotes() {
     return (

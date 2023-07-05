@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import '../Styles/School.css'
 import { Link } from 'react-router-dom';
 
+//school component parents nests child components
+
 export default function School() {
     return (
         <div className='imagefixed'>
@@ -16,9 +18,10 @@ export default function School() {
 }
 
 
+//scl logos details accessed from api
+
 function Logo() {
     const [sclLogo, setsclLogo] = useState([]);
-
     const fetchData = () => {
         fetch('https://acecraftjsondeploy.vercel.app/school')
             .then((response) => response.json())
@@ -34,37 +37,38 @@ function Logo() {
         fetchData();
     }, []);
 
-    return (
+    //displays the scl uniform details when its respective ids has been clicked and fetches details from the api
 
+    return (
         <div className="container-fluid d-flex justify-content-center" id="bg1">
             {sclLogo.map((logos) => (
                 <div key={sclLogo.id} className="logo-item text-center">
-
                     <Link to={`/Schoolproducts/${logos.id}`}>
-
                         <img
                             src={logos.sclimg}
                             alt={logos.sclname}
                             className="logo-img ps-4" />
                     </Link>
-
                     <p className="school-name" style={{ color: 'black', fontWeight: '500' }}>{logos.sclname}</p>
                     <p className="mt-n3" style={{ color: 'black', fontWeight: '500' }}>{logos.sclname2}</p>
-
                 </div>
             ))}
         </div>
     );
 }
 
+//nested component
+
 function Text() {
     return (
         <div className='container-fluid'>
             <h1 className="workwear">Designer Uniforms for the doers</h1>
-            <h1><i className="fas fa-chevron-down down1" style={{}}></i></h1>
+            <h1><i className="fas fa-chevron-down down1"></i></h1>
         </div>
     )
 }
+
+//nested component
 
 function Secondscroll() {
     return (
@@ -86,6 +90,8 @@ function Secondscroll() {
 
     )
 }
+
+//nested component
 
 function Thirdscroll() {
     return (
@@ -122,6 +128,8 @@ function Thirdscroll() {
     );
 }
 
+//nested component
+
 function Fourthscroll() {
     return (
         <section className="bg-black" style={{ color: '#978F8F' }}>
@@ -147,6 +155,8 @@ function Fourthscroll() {
     );
 }
 
+//nested component getintouch modal
+
 function Fifthscroll() {
     return (
         <section className="main3" style={{ color: '#978F8F', backgroundColor: 'black' }}>
@@ -160,17 +170,14 @@ function Fifthscroll() {
                         acecraft
                     </p>
                 </div>
-
                 <div className="fs-4 fw-lighter">
                     Establish a <b className="fw-bold">signature look</b> for your school.
                 </div>
-
                 <div className="fs-4 fw-lighter mt-5">
                     Looking to change your supplier?
                     <br />
                     <button className="btn  mt-5 text-white" type="button" data-bs-toggle="modal" data-bs-target=".example5Modal" data-bs-whatever="@mdo" style={{ border: '1px solid white' }}>Get In Touch</button>
                 </div>
-
                 <div className="modal fade example5Modal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog">
                         <div className="modal-content" style={{ width: '550px', height: '600px' }}>
@@ -181,13 +188,11 @@ function Fifthscroll() {
                                     <div className="row">
                                         <div className="col-6">
                                             <div className="input-group">
-
                                                 <input type="text" className="form-control" placeholder="First Name" style={{ fontWeight: '650' }} />
                                             </div>
                                         </div>
                                         <div className="col-6">
                                             <div className="input-group">
-
                                                 <input type="text" className="form-control" placeholder="Last Name" style={{ fontWeight: '650' }} />
                                             </div>
                                         </div>
@@ -201,19 +206,17 @@ function Fifthscroll() {
                                     <br />
                                     <div className="row">
                                         <div className="input-group">
-
                                             <input type="text" className="form-control" placeholder="Organisation" style={{ fontWeight: '650' }} />
                                         </div>
                                     </div>
                                     <br />
                                     <div className="row">
                                         <div className="input-group">
-
                                             <input type="text" className="form-control" placeholder="Phone No." style={{ fontWeight: '650' }} />
                                         </div>
                                     </div>
-                                    <p className="quan mt-3" style={{ color: 'grey', fontWeight: '650',fontSize:'15px' }}>Quantity required</p>
-                                    <div className="choice" style={{ color: 'grey', fontWeight: '600',fontSize:'15px'  }}>
+                                    <p className="quan mt-3" style={{ color: 'grey', fontWeight: '650', fontSize: '15px' }}>Quantity required</p>
+                                    <div className="choice" style={{ color: 'grey', fontWeight: '600', fontSize: '15px' }}>
                                         <input type="radio" className="quantity1" name="age" value="50" />
                                         <label htmlFor="age1" className="ps-1 ">10 - 50 Sets</label>
                                         <input type="radio" className="quantity2 ms-5 " name="age" value="100" />
@@ -227,7 +230,6 @@ function Fifthscroll() {
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
     );

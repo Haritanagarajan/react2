@@ -107,6 +107,8 @@ const Register = () => {
                 login
             };
 
+            //creating user details when register btn is invoked
+
             fetch("https://acecraftjsondeploy.vercel.app/Register", {
                 method: "POST",
                 headers: {

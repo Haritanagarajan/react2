@@ -3,9 +3,9 @@ import { useCart } from 'react-use-cart';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
+//items props stored in usecarthook
 const Cart = () => {
     const { items } = useCart();
-
     const navigate = useNavigate();
     const {
         removeItem,
@@ -13,6 +13,7 @@ const Cart = () => {
         cartTotal
     } = useCart();
 
+    //payment integration using stripe
 
     let paymentHandler = "";
 
@@ -64,7 +65,7 @@ const Cart = () => {
                             timer: 3000,
                             timerProgressBar: true,
                         });
-
+                        //alert
                         Toast.fire({
                             icon: "error",
                             title: "Error in generating Stripe Payment Gateway",
@@ -76,35 +77,30 @@ const Cart = () => {
         }
     }
 
+
     const backtoschool = () => {
         navigate("/Schoolproducts/:sclname");
     }
-
     const totalprice = (item) => {
         return Number(item.price) * Number(item.quantity) + Number(item.Size);
     };
-
-
-
-
-
     if (isEmpty) return (
         <>
             <h1 className="ms-5" style={{ marginTop: 100 }}>Oops! &#128533; your cart is empty</h1>;
             <h1 className=" mt-1 offset-4" onClick={backtoschool} style={{ fontSize: '17px', color: 'green', marginBottom: '400px' }}>-Continue Shopping Click me !  &#128526;</h1>
         </>
     );
-
     return (
         <div className="row justify-content-center ">
             <div className="col-12 text-center mt-5">
-
                 <div className="col-auto ms-auto">
+                    {/* total items in cart */}
                     <h1>Your Bag total is ₹{cartTotal}</h1>
                 </div>
                 <br />
                 <table className="table" >
                     <tbody>
+                        {/* maping json details as props */}
                         {items.map((item, index) => {
                             return (
                                 <tr key={index}>
@@ -120,29 +116,29 @@ const Cart = () => {
                                     >
                                         Remove
                                     </button>
-
                                 </tr>
                             );
                         })}
                     </tbody>
                 </table>
             </div>
+            
             <div className="row offset-11 ">
                 <h1 style={{ color: '#978F8F', fontSize: '20px' }} className='col-3 ps-5'>Sub Total </h1>
                 <h1 style={{ color: '#978F8F', fontSize: '20px' }} className='col-7'>₹{cartTotal}</h1>
             </div>
 
+
             <div className="row  offset-11 pt-3" >
                 <h1 style={{ color: 'black', fontSize: '30px' }} className='col-3 ps-5'>Total</h1>
                 <h1 style={{ color: 'black', fontSize: '30px' }} className='col-7'>₹{cartTotal}</h1>
-
             </div>
 
-            <div className="col offset-8">
 
+            <div className="col offset-8">
                 <button className="btn mt-5 mb-5" onClick={backtoschool} style={{ color: 'white', backgroundColor: 'black', fontSize: '14px' }}>
                     Continue Shopping                </button>
-
+                {/* payment btn */}
                 <button className="btn mt-5 mb-5" onClick={makePayment} style={{ color: 'white', backgroundColor: 'black', fontSize: '14px' }}>Pay Now</button>
             </div>
         </div>
