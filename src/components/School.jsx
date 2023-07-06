@@ -23,7 +23,7 @@ export default function School() {
 function Logo() {
     const [sclLogo, setsclLogo] = useState([]);
     const fetchData = () => {
-        fetch('https://acecraftjsondeploy.vercel.app/school')
+        fetch('https://reactjsonrender.onrender.com/school')
             .then((response) => response.json())
             .then((data) => {
                 setsclLogo(data);

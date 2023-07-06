@@ -9,7 +9,7 @@ const Notes = () => {
 
     //details are accessed from notes api
     const fetchData = () => {
-        fetch('https://acecraftjsondeploy.vercel.app/Notes')
+        fetch('https://reactjsonrender.onrender.com/Notes')
             .then((response) => response.json())
             .then((data) => {
                 setnotesindex(data);

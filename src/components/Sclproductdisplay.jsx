@@ -19,7 +19,7 @@ const Sclproductdisplay = () => {
     const [relatedProducts, setRelatedProducts] = useState([]);
 
     useEffect(() => {
-        fetch('https://acecraftjsondeploy.vercel.app/sclproducts')
+        fetch('https://reactjsonrender.onrender.com/sclproducts')
             .then((response) => response.json())
             .then((data) => setRelatedProducts(data));
     }, []);
@@ -27,7 +27,7 @@ const Sclproductdisplay = () => {
 
 
     useEffect(() => {
-        fetch(`https://acecraftjsondeploy.vercel.app/sclproducts/${id}`)
+        fetch(`https://reactjsonrender.onrender.com/sclproducts/${id}`)
             .then((response) => response.json())
             .then((data) => setsclproduct(data));
     }, [id]);
@@ -74,7 +74,7 @@ const Sclproductdisplay = () => {
 
         //create cart items 
 
-        fetch('https://acecraftjsondeploy.vercel.app/Cartstorage', {
+        fetch('https://reactjsonrender.onrender.com/Cartstorage', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -90,7 +90,7 @@ const Sclproductdisplay = () => {
             });
     };
 
-    fetch(`https://acecraftjsondeploy.vercel.app/Cartstorage/${id}`, {
+    fetch(`https://reactjsonrender.onrender.com/Cartstorage/${id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'

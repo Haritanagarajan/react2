@@ -40,7 +40,7 @@ const Cart = () => {
             },
         });
         paymentHandler.open({
-            name: "Course",
+            name: "Make order",
             description: "Order Details",
             //amount: amount,
         });
@@ -122,7 +122,7 @@ const Cart = () => {
                     </tbody>
                 </table>
             </div>
-            
+
             <div className="row offset-11 ">
                 <h1 style={{ color: '#978F8F', fontSize: '20px' }} className='col-3 ps-5'>Sub Total </h1>
                 <h1 style={{ color: '#978F8F', fontSize: '20px' }} className='col-7'>₹{cartTotal}</h1>

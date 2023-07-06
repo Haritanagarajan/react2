@@ -21,7 +21,7 @@ const SignIn = () => {
 
     const onSubmit = (event) => {
         event.preventDefault();
-        fetch("https://acecraftjsondeploy.vercel.app/Register")
+        fetch("https://reactjsonrender.onrender.com/Register")
             .then((response) => response.json())
             .then((data) => {
                 const registeruser = data.find(
@@ -31,7 +31,7 @@ const SignIn = () => {
                 if (registeruser) {
                     console.log("Login success");
                     const id = registeruser.id;
-                    fetch(`https://acecraftjsondeploy.vercel.app/Register/${id}`, {
+                    fetch(`https://reactjsonrender.onrender.com/Register/${id}`, {
                         method: "PUT",
                         headers: {
                             "Content-Type": "application/json",

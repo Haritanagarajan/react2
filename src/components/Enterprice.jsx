@@ -22,7 +22,7 @@ export default function Enterprice() {
 function Honda() {
     const [mensindex, setmensindex] = useState([]);
     const fetchData = () => {
-        fetch('https://acecraftjsondeploy.vercel.app/mens')
+        fetch('https://reactjsonrender.onrender.com/mens')
             .then((response) => response.json())
             .then((data) => {
                 setmensindex(data);
@@ -66,7 +66,7 @@ function Honda() {
 function Steps() {
     const [stepsindex, setstepsindex] = useState([]);
     const fetchData = () => {
-        fetch('https://acecraftjsondeploy.vercel.app/steps')
+        fetch('https://reactjsonrender.onrender.com/steps')
             .then((response) => response.json())
             .then((data) => {
                 setstepsindex(data);
@@ -108,7 +108,7 @@ function Steps() {
 function Fourimgblock() {
     const [fourimgindex, setfourimgindex] = useState([]);
     const fetchData = () => {
-        fetch('https://acecraftjsondeploy.vercel.app/fourimgblock')
+        fetch('https://reactjsonrender.onrender.com/fourimgblock')
             .then((response) => response.json())
             .then((data) => {
                 setfourimgindex(data);

@@ -109,7 +109,7 @@ const Register = () => {
 
             //creating user details when register btn is invoked
 
-            fetch("https://acecraftjsondeploy.vercel.app/Register", {
+            fetch("https://reactjsonrender.onrender.com/Register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

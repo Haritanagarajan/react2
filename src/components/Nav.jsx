@@ -3,7 +3,6 @@ import setting from '../Asserts/Images/setting.png';
 import cart from '../Asserts/Images/cart.png';
 import { Link, useNavigate } from "react-router-dom";
 import '../Styles/Nav.css';
-import Orderstatus from '../Asserts/Images/Orderstatus.png'
 import { useCart } from "react-use-cart";
 
 //navbar component
@@ -17,7 +16,7 @@ export default function Navbar() {
     //get(read) the details like id is:1
     //login is true logout is displayed in navbar
 
-    fetch("https://acecraftjsondeploy.vercel.app/Register?login_like=1")
+    fetch("https://reactjsonrender.onrender.com/Register?login_like=1")
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
@@ -33,13 +32,13 @@ export default function Navbar() {
 
     const handleLogout = () => {
         setLogin(false);
-        fetch("https://acecraftjsondeploy.vercel.app/Register?login_like=1")
+        fetch("https://reactjsonrender.onrender.com/Register?login_like=1")
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
                 if (data.length > 0) {
                     const id = data[0].id;
-                    fetch(`https://acecraftjsondeploy.vercel.app/Register/${id}`, {
+                    fetch(`https://reactjsonrender.onrender.com/Register/${id}`, {
                         method: "PUT",
                         headers: {
                             "Content-Type": "application/json",
@@ -84,8 +83,6 @@ export default function Navbar() {
                                     <ul className='ullist'>
                                         <Link style={{ color: '#978F8F', textDecoration: "none" }} to="Signin"><li id="sign-in" style={{ display: display }}>Sign In &nbsp; | <i class="fa-solid fa-right-to-bracket"></i></li></Link>
                                         <Link style={{ color: '#978F8F', textDecoration: 'none' }} to="Register"><li id="register" style={{ display: display }}>Register  &nbsp; | <i class="fa-solid fa-user-plus"></i> </li></Link>
-                                        <Link style={{ color: '#978F8F', textDecoration: 'none' }}><li id="order-status">Order Status &nbsp;| <img src={Orderstatus} alt="orderstatus" width='20' style={{ color: 'grey' }} /></li></Link>
-                                        <Link style={{ color: '#978F8F', textDecoration: 'none' }}><li id="contact">Contact  &nbsp; | <i class="fas fa-comments"></i></li></Link>
 
                                         {/* displayed only login becomes true */}
 

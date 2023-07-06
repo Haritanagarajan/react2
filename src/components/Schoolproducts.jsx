@@ -10,7 +10,7 @@ const Schoolproducts = () => {
     const [sclproduct, setSclproduct] = useState([]);
     const [sortType, setSortType] = useState("items");
     useEffect(() => {
-        fetch("https://acecraftjsondeploy.vercel.app/sclproducts")
+        fetch("https://reactjsonrender.onrender.com/sclproducts")
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);

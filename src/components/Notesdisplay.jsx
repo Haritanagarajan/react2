@@ -10,7 +10,7 @@ const Notesdisplay = () => {
     const [notesindex, setnotesindex] = useState([]);
 
     useEffect(() => {
-        fetch(`https://acecraftjsondeploy.vercel.app/Notes/${id}`)
+        fetch(`https://reactjsonrender.onrender.com/Notes/${id}`)
             .then((response) => response.json())
             .then((data) => setnotesindex(data));
     }, [id]);
