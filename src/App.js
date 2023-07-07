@@ -28,7 +28,6 @@ function App() {
           <Route exact path='School' element={<School />} />
           <Route exact path='College' element={<College />} />
           <Route exact path='Enterprice' element={<Enterprice />} />
-
           <Route exact path='Notes' element={<Notes />} />
           <Route exact path='Arienmask' element={<Arienmask />} />
           <Route exact path='/Schoolproducts/:sclname' element={<Schoolproducts />} />
@@ -38,16 +37,9 @@ function App() {
           <Route exact path="Signin" element={<Signin />}></Route>
           <Route exact path="cart" element={<PrivateAuth><Cart /></PrivateAuth>} />
           <Route exact path='/Notesdisplay/:id' element={<Notesdisplay />} />
-
         </Routes>
       </CartProvider>
       <Footer />
-
-
-
-
-
-
     </div>
   );
 }
